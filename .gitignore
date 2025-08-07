@@ -1,0 +1,28 @@
+# Binários do .NET
+bin/
+obj/
+*.exe
+*.dll
+
+# Arquivos de log
+*.log
+
+# User secrets
+*.user
+*.suo
+.vscode/
+secrets.json
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Node.js (caso use para SASS ou outro build)
+node_modules/
+
+
+# SASS
+.sass-cache/
+
+# Outros
+.env

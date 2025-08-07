@@ -1,0 +1,7 @@
+@use '../abstract/variables';
+
+body {
+    height: 100vh;
+    box-sizing: border-box;
+    background-color: variables.$midnight-green;
+}

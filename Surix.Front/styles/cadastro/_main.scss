@@ -1,0 +1,22 @@
+@use '../abstract/variables';
+
+.main  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main #left-container {
+
+}
+
+.title {
+    color: variables.$anti-flash-white;
+    font-size: 48px;
+}
+
+.bold {
+    color: variables.$spring-green;
+}
+
+
