@@ -1,0 +1,71 @@
+@use '../abstract/variables';
+
+.main-login {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.container-text-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 93%;
+}
+
+#form-login {
+    background-color: variables.$anti-flash-white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    justify-content: center;
+}
+
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-family: variables.$inter;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-left: 36px;
+    margin-top: 16px;
+    gap: 6px;
+
+    img {
+        width: 36px;
+        height: 36px;
+
+    }
+
+}
+
+.input-login {
+    width: 30rem;
+    padding: 0.8rem;
+}
+
+.btn-login {
+    width: 31.5rem;
+    padding: 0.8rem;
+}
+
+.container-forgot-password {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-checkbox {
+    display: flex;
+    align-items: center;
+
+    p {
+        font-size: 0.8rem;
+        font-family: variables.$montserrat;
+    }
+}
+

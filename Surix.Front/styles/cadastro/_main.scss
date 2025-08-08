@@ -1,22 +1,67 @@
 @use '../abstract/variables';
 
-.main  {
+h3 {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-family: variables.$inter;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-left: 36px;
+    margin-top: 16px;
+    gap: 6px;
+    
+    img {
+        width: 36px;
+        height: 36px;
+        
+    }
+}
+
+.main {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 5rem;
 }
 
-.main #left-container {
-
+#left-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .title {
+    background: linear-gradient(to right, #32ff6a, #1fbf4b);
+    /* Gradiente nas cores desejadas */
+    -webkit-background-clip: text;
+    /* Recorta o fundo no formato do texto (WebKit) */
     color: variables.$anti-flash-white;
-    font-size: 48px;
+    font-size: 3.5rem;
+    font-family: variables.$inter;
+    font-weight: bold;
 }
 
 .bold {
     color: variables.$spring-green;
 }
 
+.text-landing {
+    color: variables.$anti-flash-white;
+    width: 38rem;
+    font-family: variables.$montserrat;
+}
 
+#list-landing {
+    display: flex;
+    gap: 15px;
+}
+
+#list-landing .item-list-landing {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: variables.$anti-flash-white;
+    font-family: variables.$montserrat;
+    gap: 8px;
+}
