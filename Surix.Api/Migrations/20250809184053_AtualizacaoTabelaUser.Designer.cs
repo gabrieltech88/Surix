@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Surix.Api.Data;
 
@@ -11,9 +12,11 @@ using Surix.Api.Data;
 namespace Surix.Api.Migrations
 {
     [DbContext(typeof(SurixContext))]
-    partial class SurixContextModelSnapshot : ModelSnapshot
+    [Migration("20250809184053_AtualizacaoTabelaUser")]
+    partial class AtualizacaoTabelaUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

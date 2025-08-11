@@ -14,8 +14,17 @@ builder.Services.AddDbContext<SurixContext>(opts => opts.UseMySql(connectionStri
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddIdentity<User, IdentityRole>()
-		.AddEntityFrameworkStores<SurixContext>()
-		.AddDefaultTokenProviders();
+        .AddEntityFrameworkStores<SurixContext>()
+        .AddDefaultTokenProviders();
+
+builder.Services.Configure<IdentityOptions>(options =>
+{
+    options.Password.RequireDigit = false;               // Não exige número
+    options.Password.RequireLowercase = false;           // Não exige letra minúscula
+    options.Password.RequireUppercase = false;           // Não exige letra maiúscula
+    options.Password.RequireNonAlphanumeric = false;     // Não exige caractere especial
+    options.Password.RequiredLength = 8;                  // Exige mínimo de 8 caracteres
+});
 
 
 builder.Services.AddControllers();
@@ -50,6 +59,7 @@ app.UseFileServer(new FileServerOptions
 app.UseHttpsRedirection();
 app.UseDefaultFiles(); // Procura automaticamente por index.html
 app.UseStaticFiles();
+app.MapControllers();
 
 app.Run();
 

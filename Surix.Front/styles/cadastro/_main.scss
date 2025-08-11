@@ -1,28 +1,12 @@
 @use '../abstract/variables';
 
-h3 {
-    display: flex;
-    align-items: center;
-    color: #fff;
-    font-family: variables.$inter;
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin-left: 36px;
-    margin-top: 16px;
-    gap: 6px;
-    
-    img {
-        width: 36px;
-        height: 36px;
-        
-    }
-}
-
 .main {
+    flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 5rem;
+    
 }
 
 #left-container {

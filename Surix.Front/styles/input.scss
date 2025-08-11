@@ -4,3 +4,6 @@
 @use './cadastro/main';
 @use './cadastro/form';
 @use './index/login';
+@use './surix/header';
+@use './surix/surix';
+@use './surix/table';

@@ -1,0 +1,141 @@
+@use '../abstract/variables';
+
+#body-surix {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.main-surix {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    gap: 24px;
+    flex-grow: 1;
+}
+
+.container-one {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 49%;
+    height: 20rem;
+    background-color: variables.$eerie-black;
+    border-radius: 16px;
+    gap: 10px;
+}
+
+.container-graph {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 220px;
+    width: 600px;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.title-cards {
+    margin-left: 2rem;
+    margin-bottom: 0.8rem;
+    color: variables.$anti-flash-white;
+    font-size: 2rem;
+    margin-top: 1.6rem;
+    font-family: variables.$inter;
+    font-weight: bold;
+}
+
+#form-surix {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .input-input {
+        background-color: variables.$onyx;
+    }
+}
+
+.container-odd {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    div {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.label-input-surix {
+    font-family: variables.$inter;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: variables.$anti-flash-white;
+}
+
+.input-input-input {
+    border: 2px solid rgb(167, 166, 166);
+    border-radius: 0.3rem;
+    background-color: variables.$onyx;
+    color: variables.$anti-flash-white;
+    padding: 0.5rem;
+    width: 8rem;
+    outline: none;
+    /* remove o padrão */
+    transition: box-shadow 0.2s ease;
+
+    &:focus {
+        box-shadow:
+            0 0 0 2px variables.$eerie-black,
+            /* espaço branco (ou cor do fundo da página) */
+            0 0 0 5px variables.$spring-green;
+    }
+}
+
+.input-input-event {
+    border: 2px solid rgb(167, 166, 166);
+    border-radius: 0.3rem;
+    background-color: variables.$onyx;
+    color: variables.$anti-flash-white;
+    padding: 0.5rem;
+    width: 85.5%;
+    outline: none;
+    /* remove o padrão */
+    transition: box-shadow 0.2s ease;
+
+    &:focus {
+        box-shadow:
+            0 0 0 2px variables.$eerie-black,
+            /* espaço branco (ou cor do fundo da página) */
+            0 0 0 5px variables.$spring-green;
+    }
+}
+
+.input-surix-event {
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-surix {
+    border: none;
+    background: linear-gradient(to right, #32ff6a, #1fbf4b);
+    border-radius: 0.5rem;  
+    text-align: center;
+    color: variables.$anti-flash-white;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.6rem;
+    margin-right: 2rem;
+    margin-top: 0.8rem;
+}
+
+.container-title-surix {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

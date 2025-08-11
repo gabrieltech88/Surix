@@ -1,0 +1,73 @@
+@use '../abstract/variables';
+
+.container-table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 20rem;
+    background-color: variables.$eerie-black;
+    border-radius: 16px;
+    gap: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: transparent;
+}
+
+thead {
+    background-color: variables.$onyx;
+}
+
+th {
+    padding: 0.75rem;
+    text-align: center;
+    color: variables.$anti-flash-white;
+    font-family: variables.$inter;
+    font-weight: bold;
+}
+
+td {
+    padding: 0.75rem;
+    text-align: center;
+    color: variables.$anti-flash-white;
+    font-family: variables.$inter;
+}
+
+tbody {
+    gap: 8px;
+}
+
+tbody tr:hover {
+    background-color: variables.$spring-green;
+    color: variables.$onyx;
+}
+
+.pages {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-pages {
+    border: none;
+    background-color: transparent;
+    border-radius: 0.5rem;
+    text-align: center;
+    color: variables.$anti-flash-white;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.6rem;
+
+}
+
+#btn-right {
+    margin-right: 2rem;
+}
+
+#text-pages {
+    font-family: variables.$inter;
+    font-weight: bold;
+    color: variables.$anti-flash-white
+}

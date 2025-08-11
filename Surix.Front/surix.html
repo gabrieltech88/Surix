@@ -1,11 +1,198 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dist/output.css">
+    <link rel="icon" type="image/svg" href="./assets/icon_green.svg" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Surix</title>
 </head>
-<body>
-    
+
+<body id="body-surix">
+    <header class="header">
+        <div class="img-profile"></div>
+        <div class="container-infos">
+            <p class="title-info">Controle de Surebets</p>
+            <p class="info">Gabriel Ramos • 30 registros</p>
+        </div>
+    </header>
+    <main class="main-surix">
+        <div class="container-one">
+            <Section class="container">
+                <h2 class="title-cards">ROI mensal</h2>
+                <div class="container-graph">
+                    <canvas id="meuGrafico" class="container"></canvas>
+                </div>
+            </Section>
+            <section class="container container-register">
+                <div class="container-title-surix">
+                    <h2 class="title-cards">Registrar Surebet</h2>
+                    <button class="btn-surix">Registrar</button>
+                </div>
+                <form id="form-surix">
+                    <div class="input input-surix-event">
+                        <label for="evento" class="label-input-surix">Evento:</label>
+                        <input class="input-input-event" type="text" id="evento" name="evento"
+                            placeholder="Ex.: Barcelona x Real Madrid" required>
+                    </div>
+                    <div class="container-odd" id="container-odd-a">
+                        <div class="input input-surix">
+                            <label for="casaA" class="label-input-surix">Casa A:</label>
+                            <input class="input-input-input" type="text" id="casaA" name="casaA"
+                                placeholder="Ex.: Bet365" required>
+                        </div>
+                        <div class="input input-surix">
+                            <label for="oddA" class="label-input-surix">Odd A:</label>
+                            <input class="input-input-input" type="text" id="oddA" name="oddA" placeholder="Ex.: 2.10"
+                                required>
+                        </div>
+                        <div class="input input-surix">
+                            <label for="Stake A" class="label-input-surix">Stake A:</label>
+                            <input class="input-input-input" type="text" id="Stake A" name="Stake A"
+                                placeholder="Ex.: 157.00" required>
+                        </div>
+                    </div>
+                    <div class="container-odd" id="container-odd-b">
+                        <div class="input input-surix">
+                            <label for="casaB" class="label-input-surix">Casa B:</label>
+                            <input class="input-input-input" type="text" id="casaB" name="casaB"
+                                placeholder="Ex.: Betano" required>
+                        </div>
+                        <div class="input input-surix">
+                            <label for="oddB" class="label-input-surix">Odd B:</label>
+                            <input class="input-input-input" type="text" id="oddB" name="oddB" placeholder="Ex.: 1.98"
+                                required>
+                        </div>
+                        <div class="input input-surix">
+                            <label for="stakeB" class="label-input-surix">Stake B:</label>
+                            <input class="input-input-input" type="text" id="stakeB" name="stakeB"
+                                placeholder="Ex.: 258.00" required>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+        <section class="container-table">
+            <div class="container-title-surix">
+                <h2 class="title-cards">Suas sure</h2>
+                <div class="pages">
+                    <button id="btn-left" class="btn-pages"><</button>
+                    <p id="text-pages">1 de 10</p>
+                    <button id="btn-right" class="btn-pages">></button>
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Evento</th>
+                        <th>Stake</th>
+                        <th>Casa A</th>
+                        <th>Odd A</th>
+                        <th>Casa B</th>
+                        <th>Odd B</th>
+                        <th>Lucro</th>
+                        <th>ROI (%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2025-08-01</td>
+                        <td>Flamengo vs Palmeiras</td>
+                        <td>100</td>
+                        <td>Bet365</td>
+                        <td>2.10</td>
+                        <td>Pinnacle</td>
+                        <td>2.05</td>
+                        <td>10</td>
+                        <td>10%</td>
+                    </tr>
+                    <tr>
+                        <td>2025-08-03</td>
+                        <td>Barcelona vs Real Madrid</td>
+                        <td>150</td>
+                        <td>Betano</td>
+                        <td>1.95</td>
+                        <td>888sport</td>
+                        <td>2.00</td>
+                        <td>-20</td>
+                        <td>-13.33%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <script>
+        const ctx = document.getElementById('meuGrafico').getContext('2d');
+
+        const grafico = new Chart(ctx, {
+            type: 'line', // 'line', 'pie', 'doughnut', etc.
+            data: {
+                labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai'],
+                datasets: [{
+                    label: 'ROI (%)',
+                    data: [12, 19, 3, 5, 8],
+                    borderColor: '#32ff6a',
+                    tension: 0.6, // <- aqui controla a curvatura
+                    fill: true,
+                    pointRadius: 4,
+                    pointBackgroundColor: 'white',
+                    borderWidth: 2
+
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: {
+                    mode: 'nearest',  // pega o ponto mais próximo
+                    axis: 'x',        // interação só no eixo X (meses)
+                    intersect: false  // ativa mesmo sem precisar passar exatamente sobre o ponto
+                }, // <- Permite usar altura do CSS
+                scales: {
+                    x: {
+                        grid: {
+                            display: false // ❌ Desativa linhas verticais
+                        },
+                        ticks: {
+                            color: '#ededed',
+                            font: {
+                                size: 12,
+                                family: 'Arial'
+                            }
+                        }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: '#3a3a3a',    // ➡️ Linha pontilhada: 5px traço, 5px espaço
+                            drawBorder: false    // Opcional: remove a linha do eixo Y
+                        },
+                        ticks: {
+                            color: '#ededed',
+                            font: {
+                                size: 12,
+                                family: 'Arial'
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#ededed',
+                            font: {
+                                size: 12,
+                                weight: 'bold'
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
 </body>
+
 </html>

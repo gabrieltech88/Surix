@@ -5,12 +5,17 @@
     grid-template-columns: 1fr 1fr;
 }
 
+#title-login {
+    color: variables.$spring-green;
+}
+
 .container-text-login {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 93%;
+    height: 90%;
+    gap: 2rem;
 }
 
 #form-login {

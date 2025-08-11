@@ -1,0 +1,40 @@
+@use '../abstract/variables';
+
+.header {
+    display: flex;
+    flex-direction: row;
+    background-color: variables.$eerie-black;
+    gap: 0.8rem;
+    align-items: center;
+    padding: 1rem;
+    width: 100%;
+
+    .title-info {
+        font-size: 1.5rem;
+        color: variables.$spring-green;
+        font-family: variables.$inter;
+        font-weight: bold;
+    }
+
+
+    .info {
+        color: variables.$anti-flash-white;
+        font-family: variables.$inter;
+        font-size: 0.8rem;
+    }
+
+    .container-infos {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+}
+
+.img-profile {
+    border-radius: 50%;
+    margin-left: 0.5rem;
+    background-color: variables.$anti-flash-white;
+    height: 48px;
+    width: 48px;
+}
+

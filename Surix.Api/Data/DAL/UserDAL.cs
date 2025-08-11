@@ -30,6 +30,7 @@ namespace Surix.Api.Data.DAL
 
                 if (result.Succeeded)
                 {
+                    Thread.Sleep(2000);
                     return Ok("Usuário cadastrado com sucesso!");
                 }
                 else

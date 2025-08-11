@@ -5,7 +5,9 @@ html {
 }
 
 body {
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     box-sizing: border-box;
     background-color: variables.$midnight-green;
     background-image: repeating-linear-gradient(45deg,
