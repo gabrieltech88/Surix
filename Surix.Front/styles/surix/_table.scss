@@ -71,3 +71,14 @@ tbody tr:hover {
     font-weight: bold;
     color: variables.$anti-flash-white
 }
+
+.text-table {
+    padding-bottom: 20px;
+    color: variables.$anti-flash-white;
+    font-family: variables.$inter;
+}
+
+.my-swal-text {
+  font-family: variables.$inter;
+  font-size: 1.2rem;
+}

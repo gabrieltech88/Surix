@@ -12,15 +12,20 @@
 
 <body id="body-surix">
     <header class="header">
-        <div class="img-profile"></div>
-        <div class="container-infos">
-            <p class="title-info">Controle de Surebets</p>
-            <p class="info">Gabriel Ramos • 30 registros</p>
+        <div>
+            <div class="img-profile"></div>
+            <div class="container-infos">
+                <p class="title-info">Controle de Surebets</p>
+                <p class="info">Gabriel Ramos • 30 registros</p>
+            </div>
         </div>
+        <button class="btn-header">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path d="M5 11h8v2H5v3l-5-4 5-4v3zm-1 7h2.708a8 8 0 1 0 0-12H4A9.985 9.985 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10a9.985 9.985 0 0 1-8-4z" fill="#00e900"></path></svg>
+        </button>
     </header>
     <main class="main-surix">
         <div class="container-one">
-            <Section class="container">
+            <Section class="container container-roi">
                 <h2 class="title-cards">ROI mensal</h2>
                 <div class="container-graph">
                     <canvas id="meuGrafico" class="container"></canvas>
@@ -29,46 +34,48 @@
             <section class="container container-register">
                 <div class="container-title-surix">
                     <h2 class="title-cards">Registrar Surebet</h2>
-                    <button class="btn-surix">Registrar</button>
+                    <button class="btn-surix" id="btn-surix">Registrar</button>
                 </div>
                 <form id="form-surix">
-                    <div class="input input-surix-event">
-                        <label for="evento" class="label-input-surix">Evento:</label>
-                        <input class="input-input-event" type="text" id="evento" name="evento"
-                            placeholder="Ex.: Barcelona x Real Madrid" required>
-                    </div>
-                    <div class="container-odd" id="container-odd-a">
-                        <div class="input input-surix">
-                            <label for="casaA" class="label-input-surix">Casa A:</label>
-                            <input class="input-input-input" type="text" id="casaA" name="casaA"
-                                placeholder="Ex.: Bet365" required>
+                    <div class="container-inputs">
+                        <div class="input-surix-event">
+                            <label for="evento" class="label-input-surix-event">Evento:</label>
+                            <input class="input-input-event" type="text" id="evento" name="evento"
+                                placeholder="Ex.: Barcelona x Real Madrid" required>
                         </div>
-                        <div class="input input-surix">
-                            <label for="oddA" class="label-input-surix">Odd A:</label>
-                            <input class="input-input-input" type="text" id="oddA" name="oddA" placeholder="Ex.: 2.10"
-                                required>
+                        <div class="container-odd" id="container-odd-a">
+                            <div class="input-surix">
+                                <label for="casaA" class="label-input-surix">Casa A:</label>
+                                <input class="input-input-input" type="text" id="casaA" name="casaA"
+                                    placeholder="Ex.: Bet365" required>
+                            </div>
+                            <div class="input-surix">
+                                <label for="oddA" class="label-input-surix">Odd A:</label>
+                                <input class="input-input-input" type="text" id="oddA" name="oddA" placeholder="Ex.: 2.10"
+                                    required>
+                            </div>
+                            <div class="input-surix">
+                                <label for="stakeA" class="label-input-surix">Stake A:</label>
+                                <input class="input-input-input" type="text" id="stakeA" name="stakeA"
+                                    placeholder="Ex.: 157.00" required>
+                            </div>
                         </div>
-                        <div class="input input-surix">
-                            <label for="Stake A" class="label-input-surix">Stake A:</label>
-                            <input class="input-input-input" type="text" id="Stake A" name="Stake A"
-                                placeholder="Ex.: 157.00" required>
-                        </div>
-                    </div>
-                    <div class="container-odd" id="container-odd-b">
-                        <div class="input input-surix">
-                            <label for="casaB" class="label-input-surix">Casa B:</label>
-                            <input class="input-input-input" type="text" id="casaB" name="casaB"
-                                placeholder="Ex.: Betano" required>
-                        </div>
-                        <div class="input input-surix">
-                            <label for="oddB" class="label-input-surix">Odd B:</label>
-                            <input class="input-input-input" type="text" id="oddB" name="oddB" placeholder="Ex.: 1.98"
-                                required>
-                        </div>
-                        <div class="input input-surix">
-                            <label for="stakeB" class="label-input-surix">Stake B:</label>
-                            <input class="input-input-input" type="text" id="stakeB" name="stakeB"
-                                placeholder="Ex.: 258.00" required>
+                        <div class="container-odd" id="container-odd-b">
+                            <div class="input-surix">
+                                <label for="casaB" class="label-input-surix">Casa B:</label>
+                                <input class="input-input-input" type="text" id="casaB" name="casaB"
+                                    placeholder="Ex.: Betano" required>
+                            </div>
+                            <div class="input-surix">
+                                <label for="oddB" class="label-input-surix">Odd B:</label>
+                                <input class="input-input-input" type="text" id="oddB" name="oddB" placeholder="Ex.: 1.98"
+                                    required>
+                            </div>
+                            <div class="input-surix">
+                                <label for="stakeB" class="label-input-surix">Stake B:</label>
+                                <input class="input-input-input" type="text" id="stakeB" name="stakeB"
+                                    placeholder="Ex.: 258.00" required>
+                            </div>
                         </div>
                     </div>
                 </form>
@@ -78,7 +85,7 @@
             <div class="container-title-surix">
                 <h2 class="title-cards">Suas sure</h2>
                 <div class="pages">
-                    <button id="btn-left" class="btn-pages"><</button>
+                    <button id="btn-left" class="btn-pages">< </button>
                     <p id="text-pages">1 de 10</p>
                     <button id="btn-right" class="btn-pages">></button>
                 </div>
@@ -120,9 +127,34 @@
                         <td>-20</td>
                         <td>-13.33%</td>
                     </tr>
+                    <tr>
+                        <td>2025-08-03</td>
+                        <td>Barcelona vs Real Madrid</td>
+                        <td>150</td>
+                        <td>Betano</td>
+                        <td>1.95</td>
+                        <td>888sport</td>
+                        <td>2.00</td>
+                        <td>-20</td>
+                        <td>-13.33%</td>
+                    </tr>
+                    <tr>
+                        <td>2025-08-03</td>
+                        <td>Barcelona vs Real Madrid</td>
+                        <td>150</td>
+                        <td>Betano</td>
+                        <td>1.95</td>
+                        <td>888sport</td>
+                        <td>2.00</td>
+                        <td>-20</td>
+                        <td>-13.33%</td>
+                    </tr>
                 </tbody>
             </table>
         </section>
+        <div>
+            <p class="text-table">Surix 2025 - Todos os Direitos Reservados</p>
+        </div>
     </main>
     <script>
         const ctx = document.getElementById('meuGrafico').getContext('2d');
@@ -193,6 +225,8 @@
             }
         });
     </script>
+    <script src="./src/sure/registerSure.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

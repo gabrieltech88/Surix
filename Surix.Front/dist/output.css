@@ -63,9 +63,13 @@ body {
   flex-direction: column;
   min-height: 100vh;
   box-sizing: border-box;
-  background-color: #0f3d3e;
+  background-color: #131920;
   background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05) 1px, transparent 1px, transparent 10px);
   overflow: hidden;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 .main {
@@ -94,7 +98,7 @@ body {
 }
 
 .bold {
-  color: #32ff6a;
+  color: #00e900;
 }
 
 .text-landing {
@@ -142,7 +146,7 @@ body {
 }
 
 .title-form {
-  color: #32ff6a;
+  color: #00e900;
   font-size: 2rem;
   font-weight: bold;
   display: flex;
@@ -153,7 +157,7 @@ body {
 .text-form {
   font-family: "Montserrat", sans-serif;
   font-size: 0.8rem;
-  color: #3d3d3d;
+  color: #1b232d;
 }
 
 .container-input {
@@ -172,14 +176,14 @@ body {
   font-family: "Inter", sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
-  color: #1a1a1a;
+  color: #242d39;
 }
 
 .input-input {
   border: 2px solid rgb(167, 166, 166);
   border-radius: 0.3rem;
   background-color: #fff;
-  color: #1a1a1a;
+  color: #242d39;
   padding: 0.5rem;
   width: 20rem;
   outline: none;
@@ -187,7 +191,7 @@ body {
   transition: box-shadow 0.2s ease;
 }
 .input-input:focus {
-  box-shadow: 0 0 0 2px #ededed, 0 0 0 5px #32ff6a;
+  box-shadow: 0 0 0 2px #ededed, 0 0 0 5px #00e900;
 }
 
 .container-btn {
@@ -199,7 +203,7 @@ body {
 
 .btn {
   border: none;
-  background: linear-gradient(to right, #32ff6a, #1fbf4b);
+  background: #00e900;
   padding: 0.75rem;
   border-radius: 0.5rem;
   color: #ededed;
@@ -208,14 +212,14 @@ body {
 }
 
 .placeholder-login {
-  color: #3d3d3d;
+  color: #1b232d;
   text-align: center;
   font-family: "Montserrat", sans-serif;
   font-size: 0.8rem;
 }
 
 .placeholder-link {
-  color: #32ff6a;
+  color: #00e900;
   font-weight: 600;
   text-decoration: none;
   font-family: "Montserrat", sans-serif;
@@ -231,7 +235,7 @@ body {
 }
 
 #title-login {
-  color: #32ff6a;
+  color: #00e900;
 }
 
 .container-text-login {
@@ -296,42 +300,52 @@ body {
 .header {
   display: flex;
   flex-direction: row;
-  background-color: #1a1a1a;
-  gap: 0.8rem;
+  background-color: #242d39;
   align-items: center;
   padding: 1rem;
   width: 100%;
+  justify-content: space-between;
 }
-.header .title-info {
+.header div {
+  display: flex;
+  gap: 0.8rem;
+}
+.header div .title-info {
   font-size: 1.5rem;
-  color: #32ff6a;
+  color: #00e900;
   font-family: "Inter", sans-serif;
   font-weight: bold;
 }
-.header .info {
+.header div .info {
   color: #ededed;
   font-family: "Inter", sans-serif;
   font-size: 0.8rem;
 }
-.header .container-infos {
+.header div .container-infos {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
 }
-
-.img-profile {
+.header div .img-profile {
   border-radius: 50%;
   margin-left: 0.5rem;
   background-color: #ededed;
   height: 48px;
   width: 48px;
 }
+.header .btn-header {
+  border: none;
+  background-color: transparent;
+  margin-right: 2rem;
+}
 
 #body-surix {
   display: flex;
+  min-height: 100%;
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
+  overflow-y: scroll;
 }
 
 .main-surix {
@@ -352,7 +366,7 @@ body {
   flex-direction: column;
   width: 49%;
   height: 20rem;
-  background-color: #1a1a1a;
+  background-color: #242d39;
   border-radius: 16px;
   gap: 10px;
 }
@@ -362,34 +376,46 @@ body {
   align-items: center;
   justify-content: center;
   height: 220px;
-  width: 600px;
-  margin-left: 2rem;
-  margin-right: 2rem;
+  width: 37.5rem;
+}
+
+.container-roi {
+  justify-content: center;
+  align-items: center;
+}
+
+canvas {
+  width: 100%;
 }
 
 .title-cards {
-  margin-left: 2rem;
+  text-align: left;
   margin-bottom: 0.8rem;
   color: #ededed;
   font-size: 2rem;
   margin-top: 1.6rem;
   font-family: "Inter", sans-serif;
   font-weight: bold;
+  padding-left: 2rem;
+  width: 100%;
 }
 
 #form-surix {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 16px;
+  width: 100%;
 }
 #form-surix .input-input {
-  background-color: #3d3d3d;
+  background-color: #1b232d;
 }
 
 .container-odd {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .container-odd div {
   display: flex;
@@ -406,41 +432,53 @@ body {
 .input-input-input {
   border: 2px solid rgb(167, 166, 166);
   border-radius: 0.3rem;
-  background-color: #3d3d3d;
+  background-color: #1b232d;
   color: #ededed;
   padding: 0.5rem;
-  width: 8rem;
+  width: 10rem;
   outline: none;
   /* remove o padrão */
   transition: box-shadow 0.2s ease;
 }
 .input-input-input:focus {
-  box-shadow: 0 0 0 2px #1a1a1a, 0 0 0 5px #32ff6a;
+  box-shadow: 0 0 0 2px #242d39, 0 0 0 5px #00e900;
 }
 
 .input-input-event {
   border: 2px solid rgb(167, 166, 166);
   border-radius: 0.3rem;
-  background-color: #3d3d3d;
+  background-color: #1b232d;
   color: #ededed;
   padding: 0.5rem;
-  width: 85.5%;
+  box-sizing: border-box;
+  width: 100%;
   outline: none;
   /* remove o padrão */
   transition: box-shadow 0.2s ease;
 }
 .input-input-event:focus {
-  box-shadow: 0 0 0 2px #1a1a1a, 0 0 0 5px #32ff6a;
+  box-shadow: 0 0 0 2px #242d39, 0 0 0 5px #00e900;
 }
 
 .input-surix-event {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 0.3rem;
+}
+
+.label-input-surix-event {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ededed;
+  text-align: left;
 }
 
 .btn-surix {
-  border: none;
-  background: linear-gradient(to right, #32ff6a, #1fbf4b);
+  background-color: transparent;
+  border: 2px solid #00e900;
   border-radius: 0.5rem;
   text-align: center;
   color: #ededed;
@@ -449,6 +487,10 @@ body {
   padding: 0.6rem;
   margin-right: 2rem;
   margin-top: 0.8rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.btn-surix:hover {
+  background-color: #00e900;
 }
 
 .container-title-surix {
@@ -457,12 +499,23 @@ body {
   justify-content: space-between;
 }
 
+.container-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 90%;
+}
+
+.input-surix {
+  gap: 0.3rem;
+}
+
 .container-table {
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 20rem;
-  background-color: #1a1a1a;
+  background-color: #242d39;
   border-radius: 16px;
   gap: 10px;
 }
@@ -474,7 +527,7 @@ table {
 }
 
 thead {
-  background-color: #3d3d3d;
+  background-color: #1b232d;
 }
 
 th {
@@ -497,8 +550,8 @@ tbody {
 }
 
 tbody tr:hover {
-  background-color: #32ff6a;
-  color: #3d3d3d;
+  background-color: #00e900;
+  color: #1b232d;
 }
 
 .pages {
@@ -526,6 +579,17 @@ tbody tr:hover {
   font-family: "Inter", sans-serif;
   font-weight: bold;
   color: #ededed;
+}
+
+.text-table {
+  padding-bottom: 20px;
+  color: #ededed;
+  font-family: "Inter", sans-serif;
+}
+
+.my-swal-text {
+  font-family: "Inter", sans-serif;
+  font-size: 1.2rem;
 }
 
 /*# sourceMappingURL=output.css.map */

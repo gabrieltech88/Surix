@@ -4,6 +4,8 @@ using Surix.Api.Data.Models;
 using Microsoft.AspNetCore.Identity;
 using Surix.Api.Data;
 using Microsoft.AspNetCore.StaticFiles;
+using Surix.Api.Data.DAL;
+using Surix.Api.Services;
 using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -28,8 +30,14 @@ builder.Services.Configure<IdentityOptions>(options =>
 
 
 builder.Services.AddControllers();
+builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<SureDAL>();
+builder.Services.AddScoped<TokenService>();
 
 var app = builder.Build();
+
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.Use(async (context, next) =>
 {
