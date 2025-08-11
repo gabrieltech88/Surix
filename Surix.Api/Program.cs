@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.StaticFiles;
 using Surix.Api.Data.DAL;
 using Surix.Api.Services;
 using Microsoft.Extensions.FileProviders;
+using System.Text;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,6 +29,21 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.Password.RequireUppercase = false;           // Não exige letra maiúscula
     options.Password.RequireNonAlphanumeric = false;     // Não exige caractere especial
     options.Password.RequiredLength = 8;                  // Exige mínimo de 8 caracteres
+});
+
+builder.Services.AddAuthentication(options => //LINHA ADICIONADA
+{
+		options.DefaultAuthenticationScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(options => 
+{
+		options.TokenValidationParamaters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters 
+		{
+				ValidateIssuerSigningKey = true,
+				IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("ChaveSecretaSuperSeguraQuePrecisaTerNoMinimo32Caracteres")),
+				ValidateAudience = false,
+				ValidateIssuer = false,
+				ClockSkew = TimeSpan.Zero
+		};
 });
 
 
