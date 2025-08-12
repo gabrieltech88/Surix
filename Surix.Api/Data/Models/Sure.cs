@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Surix.Api.Data.Models;
 
@@ -16,11 +17,17 @@ public class Sure
     [Required]
     public string CasaB { get; set; }
     [Required]
-    public float oddA { get; set; }
+    [Column(TypeName = "decimal(10,2)")]
+    public double oddA { get; set; }
     [Required]
-    public float oddB { get; set; }
+    [Column(TypeName = "decimal(10,2)")]
+    public double oddB { get; set; }
     [Required]
-    public float Stake { get; set; }
+    public double Stake { get; set; }
+    [Column(TypeName = "decimal(10,2)")]
+    public double? Lucro { get; set; }
+    [Column(TypeName = "decimal(10,2)")]
+    public double? ROI { get; set; }
     
     // 🔗 Chave estrangeira para o usuário
     public string UserId { get; set; }

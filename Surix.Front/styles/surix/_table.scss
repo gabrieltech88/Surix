@@ -69,7 +69,8 @@ tbody tr:hover {
 #text-pages {
     font-family: variables.$inter;
     font-weight: bold;
-    color: variables.$anti-flash-white
+    color: variables.$anti-flash-white;
+    width: 40px;
 }
 
 .text-table {

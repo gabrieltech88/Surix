@@ -25,10 +25,11 @@ form.addEventListener("submit", async (event) => {
     })
 
     if (response.ok) {
-        window.location.href = "https://localhost:8800/index";
+        window.location.href = "https://localhost:8800/";
         btn.textContent = "Criar Conta"
     } else {
         alert("Falha ao cadastrar usuário")
+        btn.textContent = "Criar Conta"
     }
 
 })

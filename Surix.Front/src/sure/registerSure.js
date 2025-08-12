@@ -1,8 +1,20 @@
 const btn = document.getElementById('btn-surix');
 
+function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+    return null;
+}
+
+
 
 btn.addEventListener("click", async () => {
-    const evento = document.getElementById('evento').value
+
+    const token = getCookie('jwt');
+    console.log(token)
+
+    const event = document.getElementById('evento').value
     const casaA = document.getElementById('casaA').value
     const casaB = document.getElementById('casaB').value
     const oddA = document.getElementById('oddA').value
@@ -16,18 +28,19 @@ btn.addEventListener("click", async () => {
     btn.textContent = "Registrando..."
 
     const data = {
-        evento,
+        event,
         casaA,
         casaB,
-        oddA: parseFloat(oddA),
-        oddB: parseFloat(oddB),
-        stake,
+        oddA: parseFloat(parseFloat(oddA).toFixed(2)),
+        oddB: parseFloat(parseFloat(oddB).toFixed(2)),
+        stake: stakeTotal
     }
 
-    const response = await fetch("https://localhost:8800/sure", {
+    const response = await fetch("https://localhost:8800/sure/sure", {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
         },
         body: JSON.stringify(data),
     })
@@ -64,5 +77,9 @@ btn.addEventListener("click", async () => {
             color: '#fff',
             confirmButtonColor: '#00e900'
         });
+
+        btn.textContent = "Registrar"
     }
 })
+
+export default getCookie;

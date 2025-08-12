@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Surix.Api.Data;
 
@@ -11,9 +12,11 @@ using Surix.Api.Data;
 namespace Surix.Api.Migrations
 {
     [DbContext(typeof(SurixContext))]
-    partial class SurixContextModelSnapshot : ModelSnapshot
+    [Migration("20250811233327_AdicionandoLucroERoi")]
+    partial class AdicionandoLucroERoi
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -177,11 +180,11 @@ namespace Surix.Api.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<decimal?>("Lucro")
-                        .HasColumnType("decimal(10,2)");
+                    b.Property<double?>("Lucro")
+                        .HasColumnType("double");
 
-                    b.Property<decimal?>("ROI")
-                        .HasColumnType("decimal(10,2)");
+                    b.Property<double?>("ROI")
+                        .HasColumnType("double");
 
                     b.Property<double>("Stake")
                         .HasColumnType("double");
@@ -190,11 +193,11 @@ namespace Surix.Api.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(255)");
 
-                    b.Property<decimal>("oddA")
-                        .HasColumnType("decimal(10,2)");
+                    b.Property<double>("oddA")
+                        .HasColumnType("double");
 
-                    b.Property<decimal>("oddB")
-                        .HasColumnType("decimal(10,2)");
+                    b.Property<double>("oddB")
+                        .HasColumnType("double");
 
                     b.HasKey("Id");
 

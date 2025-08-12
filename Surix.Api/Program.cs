@@ -8,10 +8,22 @@ using Surix.Api.Data.DAL;
 using Surix.Api.Services;
 using Microsoft.Extensions.FileProviders;
 using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("PermitirFrontEnd", policy =>
+    {
+        policy.WithOrigins("http://127.0.0.1:5500") // ou "*", se quiser permitir qualquer origem (não recomendado em produção)
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
+
 
 var connectionString = builder.Configuration["ConnectionString"];
 
@@ -21,6 +33,20 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddIdentity<User, IdentityRole>()
         .AddEntityFrameworkStores<SurixContext>()
         .AddDefaultTokenProviders();
+
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.Events.OnRedirectToLogin = context =>
+    {
+        context.Response.StatusCode = 401;
+        return Task.CompletedTask;
+    };
+    options.Events.OnRedirectToAccessDenied = context =>
+    {
+        context.Response.StatusCode = 403;
+        return Task.CompletedTask;
+    };
+});
 
 builder.Services.Configure<IdentityOptions>(options =>
 {
@@ -33,17 +59,30 @@ builder.Services.Configure<IdentityOptions>(options =>
 
 builder.Services.AddAuthentication(options => //LINHA ADICIONADA
 {
-		options.DefaultAuthenticationScheme = JwtBearerDefaults.AuthenticationScheme;
-}).AddJwtBearer(options => 
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(options =>
 {
-		options.TokenValidationParamaters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters 
-		{
-				ValidateIssuerSigningKey = true,
-				IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("ChaveSecretaSuperSeguraQuePrecisaTerNoMinimo32Caracteres")),
-				ValidateAudience = false,
-				ValidateIssuer = false,
-				ClockSkew = TimeSpan.Zero
-		};
+    options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+    {
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("ChaveSecretaSuperSeguraQuePrecisaTerNoMinimo32Caracteres")),
+        ValidateAudience = false,
+        ValidateIssuer = false,
+        ClockSkew = TimeSpan.Zero
+    };
+
+    options.Events = new JwtBearerEvents
+    {
+        OnChallenge = context =>
+        {
+            context.HandleResponse();
+            context.Response.StatusCode = 401;
+            context.Response.ContentType = "application/json";
+            var result = System.Text.Json.JsonSerializer.Serialize(new { message = "Acesso não autorizado. Você será redirecionado para a página de login." });
+            return context.Response.WriteAsync(result);
+        }
+    };
 });
 
 
@@ -54,37 +93,19 @@ builder.Services.AddScoped<TokenService>();
 
 var app = builder.Build();
 
+app.UseCors("PermitirFrontEnd");
+
 app.UseAuthentication();
 app.UseAuthorization();
-
-app.Use(async (context, next) =>
-{
-    // Verifica se a URL termina sem extensão e se o arquivo .html correspondente existe
-    if (!Path.HasExtension(context.Request.Path.Value))
-    {
-        var path = Path.Combine(Directory.GetCurrentDirectory(), "..", "Surix.Front", context.Request.Path.Value.TrimStart('/') + ".html");
-
-        if (System.IO.File.Exists(path))
-        {
-            context.Request.Path = new PathString(context.Request.Path.Value + ".html");
-        }
-    }
-
-    await next();
-});
-
-app.UseFileServer(new FileServerOptions
+app.UseHttpsRedirection();
+app.UseStaticFiles(new StaticFileOptions
 {
     FileProvider = new PhysicalFileProvider(
         Path.Combine(Directory.GetCurrentDirectory(), "..", "Surix.Front")
     ),
-    RequestPath = "", // raiz do site
-    EnableDefaultFiles = true
+    RequestPath = "" // raiz do site
 });
 
-app.UseHttpsRedirection();
-app.UseDefaultFiles(); // Procura automaticamente por index.html
-app.UseStaticFiles();
 app.MapControllers();
 
 app.Run();

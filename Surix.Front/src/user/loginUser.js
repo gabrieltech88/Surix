@@ -12,7 +12,7 @@ form.addEventListener("submit", async (event) => {
         password
     }
 
-    const token = await fetch("https://localhost:8800/user/manipulation/login", {
+    const response = await fetch("https://localhost:8800/user/manipulation/login", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -20,8 +20,20 @@ form.addEventListener("submit", async (event) => {
         body: JSON.stringify(data)
     })
 
-    if (token.ok) {
+    if (response.ok) {
+        const token = await response.text();
         document.cookie = `jwt=${token}; path=/; Secure; SameSite=Strict`;
-        window.location.href = "/privado"
+
+        const response2 = await fetch("https://localhost:8800/surix", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+            }
+        })
+
+        if (response2.ok) {
+            window.location.href = "/surix"; // redireciona manualmente
+        }
     }
 })
