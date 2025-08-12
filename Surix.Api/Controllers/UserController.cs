@@ -22,11 +22,26 @@ namespace Surix.Api.Controllers
         public async Task<IActionResult> Login([FromBody] LoginRequest dto)
         {
             var token = await _userService.Login(dto);
-            return Ok(token);
+
+            Response.Cookies.Append("jwt", token, new CookieOptions
+            {
+                HttpOnly = false,         // protege o token contra JS (recomendado)
+                Secure = true,           // só enviar em HTTPS
+                SameSite = SameSiteMode.Strict,
+                Path = "/",
+                Expires = DateTimeOffset.UtcNow.AddMinutes(30)
+            });
+
+            return Ok("Usuário Logado");
         }
 
+        [HttpGet("logout")]
+        public async Task<IActionResult> Logout()
+        {
+            Response.Cookies.Delete("jwt");
 
+            return Ok("Usuário Deslogado");
+        }
     }
-
 }
 

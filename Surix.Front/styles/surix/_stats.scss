@@ -1,0 +1,22 @@
+@use '../abstract/variables';
+
+.container-stats {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 90%;    
+}
+
+.title-cards-stats {
+    color: rgb(167, 166, 166);
+    font-family: variables.$inter;
+    font-size: 0.9rem;
+}
+
+.container-icon {
+    display: flex;
+    width: 64px;
+    height: 64px;
+    background-color: variables.$onyx;
+}

@@ -13,11 +13,13 @@ namespace Surix.Api.Data.DAL
     {
         private readonly SurixContext _context;
         private IMapper _mapper;
+        private readonly UserManager<User> _userManager;
 
-        public SureDAL(SurixContext context, IMapper mapper)
+        public SureDAL(SurixContext context, IMapper mapper, UserManager<User> userManager)
         {
             _context = context;
             _mapper = mapper;
+            _userManager = userManager;
         }
 
         public async Task<int> CreateSure(SureCreateRequest dto, string id)
@@ -45,11 +47,13 @@ namespace Surix.Api.Data.DAL
         {
 
             var query = _context.Sures.Where(s => s.UserId == id);
+            var name = _userManager.Users.Where(u => u.Id == id).Select(u => u.Name).FirstOrDefault();
+
             var totalCount = await query.CountAsync();
 
             var sures = await _context.Sures
                 .Where(s => s.UserId == id)
-                .OrderByDescending(s => s.Date) // Ordena por data, do mais recente
+                .OrderByDescending(s => s.Id) // Ordena por data, do mais recente
                 .Skip((pageNumber - 1) * pageSize) // Pula as páginas anteriores
                 .Take(pageSize) // Pega o tamanho da página
                 .ToListAsync();
@@ -59,9 +63,33 @@ namespace Surix.Api.Data.DAL
                 Sures = sures,
                 TotalCount = totalCount,
                 PageNumber = pageNumber,
-                PageSize = pageSize
+                PageSize = pageSize,
+                Name = name
             };
 
+
+        }
+
+        public async Task<List<RoiPerDay>> GetRoi(string id)
+        {
+            int mesAtual = DateTime.Now.Month;   // retorna 1 a 12
+            int anoAtual = DateTime.Now.Year;    // retorna o ano com 4 dígitos, ex: 2025
+
+            var somaRoiPorDia = await _context.Sures
+                .Where(s => s.UserId == id
+                    && s.Date.Year == anoAtual
+                    && s.Date.Month == mesAtual) 
+                .GroupBy(sure => new { sure.Date.Day, sure.Date.Month})
+                .Select(s => new RoiPerDay
+                {
+                    Dia = s.Key.Day,
+                    Mes = s.Key.Month,
+                    SomaRoi = s.Sum(x => x.ROI) ?? 0
+                })
+                .OrderBy(x => x.Dia)
+                .ToListAsync();
+
+            return somaRoiPorDia;
 
         }
 

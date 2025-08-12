@@ -40,26 +40,28 @@ tbody {
 }
 
 tbody tr:hover {
-    background-color: variables.$spring-green;
-    color: variables.$onyx;
+    background-color: #006d05
+   
+}
+
+tbody tr:hover td {
+   color: variables.$spring-green;
 }
 
 .pages {
     display: flex;
     align-items: center;
-    gap: 10px;
+    width: 10rem;
 }
 
 .btn-pages {
     border: none;
     background-color: transparent;
-    border-radius: 0.5rem;
     text-align: center;
-    color: variables.$anti-flash-white;
-    font-size: 1rem;
+    color: #00e900;
+    font-size: 1.5rem;
     font-weight: bold;
     padding: 0.6rem;
-
 }
 
 #btn-right {
@@ -67,10 +69,11 @@ tbody tr:hover {
 }
 
 #text-pages {
+    display: flex;
     font-family: variables.$inter;
     font-weight: bold;
     color: variables.$anti-flash-white;
-    width: 40px;
+    width: auto;
 }
 
 .text-table {

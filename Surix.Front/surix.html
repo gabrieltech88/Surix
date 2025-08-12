@@ -16,11 +16,16 @@
             <div class="img-profile"></div>
             <div class="container-infos">
                 <p class="title-info">Controle de Surebets</p>
-                <p class="info">Gabriel Ramos • 30 registros</p>
+                <p id="info" class="info">Gabriel Ramos • 30 registros</p>
             </div>
         </div>
-        <button class="btn-header">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path d="M5 11h8v2H5v3l-5-4 5-4v3zm-1 7h2.708a8 8 0 1 0 0-12H4A9.985 9.985 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10a9.985 9.985 0 0 1-8-4z" fill="#00e900"></path></svg>
+        <button class="btn-header" id="logout">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path fill="none" d="M0 0h24v24H0z"></path>
+                <path
+                    d="M5 11h8v2H5v3l-5-4 5-4v3zm-1 7h2.708a8 8 0 1 0 0-12H4A9.985 9.985 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10a9.985 9.985 0 0 1-8-4z"
+                    fill="#00e900"></path>
+            </svg>
         </button>
     </header>
     <main class="main-surix">
@@ -51,8 +56,8 @@
                             </div>
                             <div class="input-surix">
                                 <label for="oddA" class="label-input-surix">Odd A:</label>
-                                <input class="input-input-input" type="text" id="oddA" name="oddA" placeholder="Ex.: 2.10"
-                                    required>
+                                <input class="input-input-input" type="text" id="oddA" name="oddA"
+                                    placeholder="Ex.: 2.10" required>
                             </div>
                             <div class="input-surix">
                                 <label for="stakeA" class="label-input-surix">Stake A:</label>
@@ -68,8 +73,8 @@
                             </div>
                             <div class="input-surix">
                                 <label for="oddB" class="label-input-surix">Odd B:</label>
-                                <input class="input-input-input" type="text" id="oddB" name="oddB" placeholder="Ex.: 1.98"
-                                    required>
+                                <input class="input-input-input" type="text" id="oddB" name="oddB"
+                                    placeholder="Ex.: 1.98" required>
                             </div>
                             <div class="input-surix">
                                 <label for="stakeB" class="label-input-surix">Stake B:</label>
@@ -83,11 +88,55 @@
         </div>
         <section class="container-table">
             <div class="container-title-surix">
+                <h2 class="title-cards">Resumo do Mês</h2>
+            </div>
+            <div class="container-stats">
+                <div>
+                    <div class="container-icon">
+                        <img src="" alt="">
+                    </div>
+                    <div>
+                        <p class="title-cards-stats">ROI total do mês</p>
+                        <p></p>
+                    </div>
+                </div>
+                <div>
+                    <div class="container-icon">
+                        <img src="" alt="">
+                    </div>
+                    <div>
+                        <p class="title-cards-stats">Lucro total do mês</p>
+                        <p></p>
+                    </div>
+                </div>
+                <div>
+                    <div class="container-icon">
+                        <img src="" alt="">
+                    </div>
+                    <div>
+                        <p class="title-cards-stats">Sures no mês</p>
+                        <p></p>
+                    </div>
+                </div>
+                <div>
+                    <div class="container-icon">
+                        <img src="" alt="">
+                    </div>
+                    <div>
+                        <p class="title-cards-stats">Total Apostado no mês</p>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container-table">
+            <div class="container-title-surix">
                 <h2 class="title-cards">Suas sure</h2>
                 <div class="pages">
-                    <button id="btn-left" class="btn-pages">< </button>
-                    <p id="text-pages">1 - 10</p>
-                    <button id="btn-right" class="btn-pages">></button>
+                    <button id="btn-left" class="btn-pages">
+                        < </button>
+                            <p id="text-pages">1 - 10</p>
+                            <button id="btn-right" class="btn-pages"> > </button>
                 </div>
             </div>
             <table>
@@ -126,77 +175,10 @@
             <p class="text-table">Surix 2025 - Todos os Direitos Reservados</p>
         </div>
     </main>
-    <script>
-        const ctx = document.getElementById('meuGrafico').getContext('2d');
-
-        const grafico = new Chart(ctx, {
-            type: 'line', // 'line', 'pie', 'doughnut', etc.
-            data: {
-                labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai'],
-                datasets: [{
-                    label: 'ROI (%)',
-                    data: [12, 19, 3, 5, 8],
-                    borderColor: '#32ff6a',
-                    tension: 0.6, // <- aqui controla a curvatura
-                    fill: true,
-                    pointRadius: 4,
-                    pointBackgroundColor: 'white',
-                    borderWidth: 2
-
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                interaction: {
-                    mode: 'nearest',  // pega o ponto mais próximo
-                    axis: 'x',        // interação só no eixo X (meses)
-                    intersect: false  // ativa mesmo sem precisar passar exatamente sobre o ponto
-                }, // <- Permite usar altura do CSS
-                scales: {
-                    x: {
-                        grid: {
-                            display: false // ❌ Desativa linhas verticais
-                        },
-                        ticks: {
-                            color: '#ededed',
-                            font: {
-                                size: 12,
-                                family: 'Arial'
-                            }
-                        }
-                    },
-                    y: {
-                        beginAtZero: true,
-                        grid: {
-                            color: '#3a3a3a',    // ➡️ Linha pontilhada: 5px traço, 5px espaço
-                            drawBorder: false    // Opcional: remove a linha do eixo Y
-                        },
-                        ticks: {
-                            color: '#ededed',
-                            font: {
-                                size: 12,
-                                family: 'Arial'
-                            }
-                        }
-                    }
-                },
-                plugins: {
-                    legend: {
-                        labels: {
-                            color: '#ededed',
-                            font: {
-                                size: 12,
-                                weight: 'bold'
-                            }
-                        }
-                    }
-                }
-            }
-        });
-    </script>
+    <script src="./src/sure/graph.js" type="module"></script>
     <script src="./src/sure/registerSure.js" type="module"></script>
     <script src="./src/sure/contentSure.js" type="module"></script>
+    <script src="./src/user/logoutUser.js" type="module"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 

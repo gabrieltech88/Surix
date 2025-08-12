@@ -3,9 +3,13 @@ import getCookie from "./registerSure.js"
 const table = document.getElementById('body-table')
 const btnLeft = document.getElementById('btn-left')
 const btnRight = document.getElementById('btn-right')
+const text = document.getElementById('info')
+const textPages = document.getElementById('text-pages')
 
 let pageNumber = 1
 let pageSize = 4
+let paginas = []
+let pageController = 1
 
 document.addEventListener("DOMContentLoaded", async () => {
     const token = getCookie('jwt')
@@ -22,7 +26,20 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const data = await response.json();
     const sures = data.sures
-    console.log(data)
+    const name = data.name
+    const count = data.totalCount
+    const pages = Number(data.totalCount) / 4
+
+    if(!Number.isInteger(pages)) {
+        const page = Math.floor(pages) + 1
+        textPages.textContent = `1 - ${page}`
+        paginas.push(page)
+    } else {
+        textPages.textContent = `1 - ${pages}`
+        paginas.push(pages)
+    }
+
+    text.textContent = `${name} • ${count} registros`
 
 
     sures.forEach((sure) => {
@@ -48,11 +65,19 @@ btnLeft.addEventListener("click", () => {
 
     if (pageNumber > 1) {
         loadPage(pageNumber - 1);
+        pageController -= 1
+        textPages.textContent = `${pageController} - ${paginas}`
     }
+
 })
 
 btnRight.addEventListener("click", () => {
-    loadPage(pageNumber + 1);
+
+    if(pageController < paginas) {
+        loadPage(pageNumber + 1);
+        pageController += 1
+        textPages.textContent = `${pageController} - ${paginas}`
+    }
 })
 
 const loadPage = async (page) => {
@@ -94,3 +119,6 @@ const loadPage = async (page) => {
 
 
 };
+
+
+export default loadPage;

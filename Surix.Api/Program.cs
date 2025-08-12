@@ -74,14 +74,16 @@ builder.Services.AddAuthentication(options => //LINHA ADICIONADA
 
     options.Events = new JwtBearerEvents
     {
-        OnChallenge = context =>
+        OnMessageReceived = context =>
         {
-            context.HandleResponse();
-            context.Response.StatusCode = 401;
-            context.Response.ContentType = "application/json";
-            var result = System.Text.Json.JsonSerializer.Serialize(new { message = "Acesso não autorizado. Você será redirecionado para a página de login." });
-            return context.Response.WriteAsync(result);
+            var token = context.Request.Cookies["jwt"];
+            if (!string.IsNullOrEmpty(token))
+            {
+                context.Token = token;
+            }
+            return Task.CompletedTask;
         }
+
     };
 });
 

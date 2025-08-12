@@ -1,4 +1,8 @@
+import loadPage from "./contentSure.js";
+
 const btn = document.getElementById('btn-surix');
+let pageNumber = 1
+let pageSize = 4
 
 function getCookie(name) {
     const value = `; ${document.cookie}`;
@@ -14,13 +18,22 @@ btn.addEventListener("click", async () => {
     const token = getCookie('jwt');
     console.log(token)
 
-    const event = document.getElementById('evento').value
-    const casaA = document.getElementById('casaA').value
-    const casaB = document.getElementById('casaB').value
-    const oddA = document.getElementById('oddA').value
-    const oddB = document.getElementById('oddB').value
-    let stakeA = parseFloat(document.getElementById('stakeA').value)
-    let stakeB = parseFloat(document.getElementById('stakeB').value)
+    let inputEvent = document.getElementById('evento')
+    let inputCasaA = document.getElementById('casaA')
+    let inputCasaB = document.getElementById('casaB')
+    let inputOddA = document.getElementById('oddA')
+    let inputOddB = document.getElementById('oddB')
+    let inputStakeA = document.getElementById('stakeA')
+    let inputStakeB = document.getElementById('stakeB')
+
+    let event = inputEvent.value
+    let casaA = inputCasaA.value
+    let casaB = inputCasaB.value
+    let oddA = inputOddA.value
+    let oddB = inputOddB.value
+    let stakeA = parseFloat(inputStakeA.value)
+    let stakeB = parseFloat(inputStakeB.value)
+
 
     const stakeTotal = stakeA + stakeB;
     console.log(stakeTotal)
@@ -36,7 +49,7 @@ btn.addEventListener("click", async () => {
         stake: stakeTotal
     }
 
-    const response = await fetch("https://localhost:8800/sure/sure", {
+    const response = await fetch("https://localhost:8800/sure", {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',
@@ -46,6 +59,16 @@ btn.addEventListener("click", async () => {
     })
 
     if (response.ok) {
+        loadPage(1);
+
+        inputEvent.value = ""
+        inputCasaA.value = ""
+        inputCasaB.value = "" 
+        inputOddA.value = "" 
+        inputOddB.value = "" 
+        inputStakeA.value = "" 
+        inputStakeB.value = ""
+
         Swal.fire({
             icon: 'success',
             title: 'Sucesso!',

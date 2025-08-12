@@ -40,5 +40,18 @@ namespace Surix.Api.Controllers
 
             return Ok(result);
         }
+
+        
+        [HttpGet("roi")]
+        [Authorize]
+        public async Task<IActionResult> Roi()
+        {
+            var id = User.FindFirstValue("id");
+
+            var result = await _sureDAL.GetRoi(id);
+
+            return Ok(result);
+        }
+
     }
 }
