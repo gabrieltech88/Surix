@@ -9,7 +9,7 @@ const grafico = new Chart(ctx, {
         datasets: [{
             label: 'ROI (%)',
             data: [],
-            borderColor: '#32ff6a',
+            borderColor: '#00e900',
             tension: 0.6,
             fill: true,
             pointRadius: 4,

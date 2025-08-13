@@ -2,6 +2,7 @@
 
 .container-stats {
     display: grid;
+    align-self: center;
     gap: 2rem;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -11,12 +12,44 @@
 .title-cards-stats {
     color: rgb(167, 166, 166);
     font-family: variables.$inter;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    font-weight: 600;
 }
 
 .container-icon {
     display: flex;
     width: 64px;
     height: 64px;
-    background-color: variables.$onyx;
+    background-color: #006d05;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.img-stats {
+    width: 36px;
+    height: 36px;
+}
+
+.container-cards-stats {
+    display: flex;
+    border: 2px solid rgb(167, 166, 166);
+    border-radius: 10px;
+    padding: 18px;
+    gap: 18px;
+}
+
+.text-stats-info {
+    color: variables.$spring-green;
+    font-family: variables.$inter;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 6px;
+}
+
+.container-text-stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
 }
