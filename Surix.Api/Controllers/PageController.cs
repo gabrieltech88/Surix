@@ -27,17 +27,33 @@ namespace Surix.Api.Controllers
         // Página protegida
         [HttpGet("surix")]
         [Authorize]
-        public IActionResult SurixPage()
+        public IActionResult GetSurix()
         {
             var filePath = Path.Combine(_pagesPath, "surix.html");
             return PhysicalFile(filePath, "text/html");
         }
 
-        // Página genérica (rota = nome do arquivo)
         [HttpGet("cadastro")]
         public IActionResult GetCadastro()
         {
             var filePath = Path.Combine(_pagesPath, "cadastro.html");
+            return PhysicalFile(filePath, "text/html");
+        }
+
+
+        [HttpGet("calculadora")]
+        [Authorize]
+        public IActionResult GetCalculadora()
+        {
+            var filePath = Path.Combine(_pagesPath, "calculadora.html");
+            return PhysicalFile(filePath, "text/html");
+        }
+
+        [HttpGet("sures")]
+        [Authorize]
+        public IActionResult GetSures()
+        {
+            var filePath = Path.Combine(_pagesPath, "sures.html");
             return PhysicalFile(filePath, "text/html");
         }
     }

@@ -4,9 +4,10 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 22rem;
+    height: 21.5rem;
     background-color: variables.$eerie-black;
     border-radius: 16px;
+    border: 1px solid gray;
     gap: 10px;
 }
 

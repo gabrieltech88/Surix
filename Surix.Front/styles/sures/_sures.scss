@@ -1,0 +1,210 @@
+@use '../abstract/variables';
+
+#section-sure {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    width: 100%;
+
+}
+
+.line-line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid gray;
+    gap: 10px;
+}
+
+.column {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: variables.$eerie-black;
+    gap: 20px;
+    padding: 20px;
+    width: 27rem;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+.line {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.line1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.line-line1 {
+    display: flex;
+    gap: 10px;
+}
+
+.container-data-hora {
+    display: flex;
+    gap: 8px;
+}
+
+.container-jogos {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.categoria {
+    background-color: variables.$spring-green;
+    padding: 8px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    color: variables.$anti-flash-white;
+    text-align: center;
+    font-family: variables.$inter;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.campeonato {
+    background-color: transparent;
+    padding: 8px;
+    align-items: center;
+    border: 1px solid rgb(128, 128, 128);
+    justify-content: center;
+    border-radius: 18px;
+    color: variables.$anti-flash-white;
+    font-family: variables.$inter;
+    font-weight: bold;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.porcentagem {
+    display: flex;
+    gap: 8px;
+    background-color: green;
+    text-align: center;
+    padding: 8px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    color: variables.$anti-flash-white;
+    font-family: variables.$inter;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.evento {
+    color: variables.$anti-flash-white;
+    font-family: variables.$inter;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.data {
+    display: flex;
+    gap: 4px;
+    color: gray;
+    font-family: variables.$inter;
+    font-size: 0.9rem;
+    font-weight: 400;
+
+}
+
+.hora {
+    display: flex;
+    gap: 4px;
+    color: gray;
+    font-family: variables.$inter;
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+
+.jogo {
+    display: flex;
+    flex-direction: column;
+    background-color: variables.$onyx;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 24px;
+    border-radius: 4px;
+}
+
+.casa1 {
+    color: variables.$anti-flash-white;
+    font-family: variables.$inter;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.mercado1 {
+    color: gray;
+    font-family: variables.$inter;
+    font-weight: 400;
+    font-size: 0.8rem;
+}
+
+.odd1 {
+    color: variables.$anti-flash-white;
+    font-family: variables.$inter;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: variables.$primary-background;
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+.lucro-garantido {
+    margin-top: 12px;
+    color: gray;
+    font-family: variables.$inter;
+    font-weight: 400;
+    font-size: 0.8rem;
+}
+
+.retorno {
+    background-color: green;
+    text-align: center;
+    padding: 12px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    color: variables.$anti-flash-white;
+    font-family: variables.$inter;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.container-vs {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: variables.$onyx;
+    border-radius: 50%;
+    margin-top: 7.5%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid gray;
+    z-index: 2;
+}
+
+.vs {
+    color: variables.$anti-flash-white;
+    font-weight: bold;
+    font-family: variables.$inter;
+
+}

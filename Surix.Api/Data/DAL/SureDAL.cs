@@ -78,8 +78,8 @@ namespace Surix.Api.Data.DAL
             var somaRoiPorDia = await _context.Sures
                 .Where(s => s.UserId == id
                     && s.Date.Year == anoAtual
-                    && s.Date.Month == mesAtual) 
-                .GroupBy(sure => new { sure.Date.Day, sure.Date.Month})
+                    && s.Date.Month == mesAtual)
+                .GroupBy(sure => new { sure.Date.Day, sure.Date.Month })
                 .Select(s => new RoiPerDay
                 {
                     Dia = s.Key.Day,
@@ -92,6 +92,29 @@ namespace Surix.Api.Data.DAL
             return somaRoiPorDia;
 
         }
+
+        public async Task<object> GetStats(string id)
+        {
+            int mesAtual = DateTime.Now.Month;   // retorna 1 a 12
+            int anoAtual = DateTime.Now.Year;    // retorna o ano com 4 dígitos, ex: 2025
+
+            var totaisMes = await _context.Sures
+                .Where(s => s.UserId == id
+                && s.Date.Year == anoAtual
+                && s.Date.Month == mesAtual)
+                .GroupBy(s => 1) // Agrupa tudo junto
+                .Select(g => new
+                {
+                    RoiMensal = g.Sum(x => x.ROI) ?? 0,
+                    LucroMensal = g.Sum(x => x.Lucro) ?? 0,
+                    StakeTotal =  g.Sum(x => x.Stake),
+                    QuantidadeSures = g.Count()
+                })
+                .FirstOrDefaultAsync();
+
+            return totaisMes;
+        }
+
 
     }
 }

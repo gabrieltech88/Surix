@@ -4,17 +4,41 @@
     display: flex;
     flex-direction: row;
     background-color: variables.$eerie-black;
+    border-bottom: 1px solid gray;
     
     align-items: center;
     padding: 1rem;
     width: 100%;
     justify-content: space-between;
+
+
+    .header-left {
+        flex: 1; // apenas ocupa espaço
+    }
+
+    .header-center {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        justify-content: center; // centraliza os botões/informações
+        flex: 2; // pode ajustar peso para centralizar melhor
+    }
+
+    .header-right {
+        display: flex;
+        align-items: center;
+        flex: 1; // mantém logout no canto direito
+        justify-content: flex-end;
+    }
     
     div {
         display: flex;
         gap: 0.8rem;
 
         .title-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
             font-size: 1.5rem;
             color: variables.$spring-green;
             font-family: variables.$inter;
@@ -49,6 +73,28 @@
         margin-right: 2rem;
     }
 
+    .btn-header-locals {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 6px;
+        border: none;
+        background-color: transparent;
+        font-family: variables.$inter;
+        font-weight: 600;
+        color: variables.$anti-flash-white;
+        font-size: 1rem;
+        text-decoration: none;
+
+        &:hover {
+            color: variables.$spring-green;
+        }
+    }
+
+    .icon-btn {
+        height: 16px;
+        width: 16px;
+    }
 }
 
 

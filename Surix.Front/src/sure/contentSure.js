@@ -7,7 +7,7 @@ const text = document.getElementById('info')
 const textPages = document.getElementById('text-pages')
 
 let pageNumber = 1
-let pageSize = 4
+let pageSize = 5
 let paginas = []
 let pageController = 1
 
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const sures = data.sures
     const name = data.name
     const count = data.totalCount
-    const pages = Number(data.totalCount) / 4
+    const pages = Number(data.totalCount) / 5
 
     if(!Number.isInteger(pages)) {
         const page = Math.floor(pages) + 1

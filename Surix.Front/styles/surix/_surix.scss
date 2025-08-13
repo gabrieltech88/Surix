@@ -30,6 +30,7 @@
     background-color: variables.$eerie-black;
     border-radius: 16px;
     gap: 10px;
+    border: 1px solid gray;
 }
 
 .container-graph {
@@ -78,6 +79,7 @@ canvas {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+   
 
     div {
         display: flex;

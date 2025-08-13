@@ -90,6 +90,7 @@ builder.Services.AddAuthentication(options => //LINHA ADICIONADA
 
 builder.Services.AddControllers();
 builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<SureService>();
 builder.Services.AddScoped<SureDAL>();
 builder.Services.AddScoped<TokenService>();
 

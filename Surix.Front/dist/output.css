@@ -301,16 +301,36 @@ body {
   display: flex;
   flex-direction: row;
   background-color: #242d39;
+  border-bottom: 1px solid gray;
   align-items: center;
   padding: 1rem;
   width: 100%;
   justify-content: space-between;
+}
+.header .header-left {
+  flex: 1;
+}
+.header .header-center {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+  flex: 2;
+}
+.header .header-right {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: flex-end;
 }
 .header div {
   display: flex;
   gap: 0.8rem;
 }
 .header div .title-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-size: 1.5rem;
   color: #00e900;
   font-family: "Inter", sans-serif;
@@ -337,6 +357,26 @@ body {
   border: none;
   background-color: transparent;
   margin-right: 2rem;
+}
+.header .btn-header-locals {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  background-color: transparent;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  color: #ededed;
+  font-size: 1rem;
+  text-decoration: none;
+}
+.header .btn-header-locals:hover {
+  color: #00e900;
+}
+.header .icon-btn {
+  height: 16px;
+  width: 16px;
 }
 
 #body-surix {
@@ -369,6 +409,7 @@ body {
   background-color: #242d39;
   border-radius: 16px;
   gap: 10px;
+  border: 1px solid gray;
 }
 
 .container-graph {
@@ -514,9 +555,10 @@ canvas {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 22rem;
+  height: 21.5rem;
   background-color: #242d39;
   border-radius: 16px;
+  border: 1px solid gray;
   gap: 10px;
 }
 
@@ -616,7 +658,7 @@ tbody tr:hover td {
   display: flex;
   width: 64px;
   height: 64px;
-  background-color: #006d05;
+  background-color: #1b232d; /*#006d05;*/
   justify-content: center;
   align-items: center;
   border-radius: 8px;
@@ -647,6 +689,217 @@ tbody tr:hover td {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.main-calc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#section-sure {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.line-line {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid gray;
+  gap: 10px;
+}
+
+.column {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: #242d39;
+  gap: 20px;
+  padding: 20px;
+  width: 27rem;
+  border: 1px solid gray;
+  border-radius: 10px;
+}
+
+.line {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.line1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.line-line1 {
+  display: flex;
+  gap: 10px;
+}
+
+.container-data-hora {
+  display: flex;
+  gap: 8px;
+}
+
+.container-jogos {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.categoria {
+  background-color: #00e900;
+  padding: 8px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  color: #ededed;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.campeonato {
+  background-color: transparent;
+  padding: 8px;
+  align-items: center;
+  border: 1px solid rgb(128, 128, 128);
+  justify-content: center;
+  border-radius: 18px;
+  color: #ededed;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.porcentagem {
+  display: flex;
+  gap: 8px;
+  background-color: green;
+  text-align: center;
+  padding: 8px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  color: #ededed;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.evento {
+  color: #ededed;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.data {
+  display: flex;
+  gap: 4px;
+  color: gray;
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.hora {
+  display: flex;
+  gap: 4px;
+  color: gray;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+.jogo {
+  display: flex;
+  flex-direction: column;
+  background-color: #1b232d;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 24px;
+  border-radius: 4px;
+}
+
+.casa1 {
+  color: #ededed;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.mercado1 {
+  color: gray;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
+.odd1 {
+  color: #ededed;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  background-color: #131920;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.lucro-garantido {
+  margin-top: 12px;
+  color: gray;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
+.retorno {
+  background-color: green;
+  text-align: center;
+  padding: 12px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: #ededed;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.container-vs {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1b232d;
+  border-radius: 50%;
+  margin-top: 7.5%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid gray;
+  z-index: 2;
+}
+
+.vs {
+  color: #ededed;
+  font-weight: bold;
+  font-family: "Inter", sans-serif;
 }
 
 /*# sourceMappingURL=output.css.map */
