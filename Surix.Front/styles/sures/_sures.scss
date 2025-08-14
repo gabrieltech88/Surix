@@ -5,6 +5,7 @@
     flex-direction: column;
     margin-top: 1rem;
     width: 100%;
+    gap: 20px;
 
 }
 
@@ -38,7 +39,7 @@
 .line {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 16px;
 }
 
 .line1 {
@@ -70,14 +71,18 @@
     border-radius: 18px;
     color: variables.$anti-flash-white;
     text-align: center;
+    line-height: normal;
     font-family: variables.$inter;
     font-weight: bold;
     font-size: 0.8rem;
 }
 
 .campeonato {
+    display: flex;
+    gap: 6px;
     background-color: transparent;
     padding: 8px;
+    line-height: normal;
     align-items: center;
     border: 1px solid rgb(128, 128, 128);
     justify-content: center;
@@ -92,7 +97,7 @@
 .porcentagem {
     display: flex;
     gap: 8px;
-    background-color: green;
+    background: linear-gradient(to right, #00e900, #007a00);
     text-align: center;
     padding: 8px;
     align-items: center;
@@ -139,6 +144,7 @@
     align-items: center;
     padding: 14px 24px;
     border-radius: 4px;
+    width: 190px;
 }
 
 .casa1 {
@@ -156,7 +162,7 @@
 }
 
 .odd1 {
-    color: variables.$anti-flash-white;
+    color: variables.$spring-green;
     font-family: variables.$inter;
     font-weight: bold;
     font-size: 1rem;
@@ -174,7 +180,7 @@
 }
 
 .retorno {
-    background-color: green;
+    background: linear-gradient(to right, #00e900, #007a00);
     text-align: center;
     padding: 12px;
     align-items: center;
@@ -198,7 +204,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid gray;
+    border: 2px solid #808080;
     z-index: 2;
 }
 
@@ -207,4 +213,8 @@
     font-weight: bold;
     font-family: variables.$inter;
 
+}
+
+#body-sures {
+    overflow: scroll;
 }

@@ -7,7 +7,7 @@
     <link rel="icon" type="image/svg" href="./assets/icon_green.svg" />
     <title>Surix</title>
 </head>
-<body>
+<body id="body-sures">
     <header class="header">
         <div class="header-left">
             <div class="container-infos">
@@ -18,7 +18,7 @@
         <div class="header-center">
             <a class="btn-header-locals" href="/surix"><img class="icon-btn"  src="./assets/sheets.svg" alt=""> Dashboard</a>
             <a class="btn-header-locals" href="/calculadora"><img class="icon-btn" src="./assets/calculator.svg" alt=""> Calculadora</a>
-            <a class="btn-header-locals" href="/sures"><img class="icon-btn" src="./assets/calculator.svg" alt=""> Surebets</a>
+            <a class="btn-header-locals" href="/sures"><img class="icon-btn" src="./assets/sure.svg" alt=""> Surebets</a>
         </div>
         <div class="header-right">
             <button class="btn-header " id="logout" >
@@ -33,13 +33,14 @@
         </div>
     </header>
     <section id="section-sure">
+        <!--
         <div class="column">
             <div class="card">
                 <div class="line">
                     <div class="line1">
                         <div class="line-line1">
                             <p class="categoria">Futebol</p>
-                            <p class="campeonato">La Liga</p>
+                            <p class="campeonato"><img src="./assets/trophy.svg" alt="" style="height: 14px; width: 14px;">La Liga</p>
                         </div>
                         <p class="porcentagem">
                             <img src="./assets/arrow-white.svg" style="width: 16px; height: 16px;"> 
@@ -142,7 +143,9 @@
                     <p class="retorno ">3.25% de retorno</p>
                 </div>
             </div>
-        </div>
+        </div> -->
     </section>
+    <script src="./src/sure/getSures.js" type="module"></script>
+    <script src="./src/user/logoutUser.js" type="module"></script>
 </body>
 </html>

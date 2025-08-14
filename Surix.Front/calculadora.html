@@ -8,6 +8,30 @@
     <title>Surix</title>
 </head>
 <body>
+    <header class="header">
+        <div class="header-left">
+            <div class="container-infos">
+                <p class="title-info"><img src="./assets/icon_green.svg" alt="" style="height: 32px; width: 32px;"> Surix</p>
+                <p id="info" class="info">Gabriel Ramos • 30 registros</p>
+            </div>
+        </div>
+        <div class="header-center">
+            <a class="btn-header-locals" href="/surix"><img class="icon-btn"  src="./assets/sheets.svg" alt=""> Dashboard</a>
+            <a class="btn-header-locals" href="/calculadora"><img class="icon-btn" src="./assets/calculator.svg" alt=""> Calculadora</a>
+            <a class="btn-header-locals" href="/sures"><img class="icon-btn" src="./assets/sure.svg" alt=""> Surebets</a>
+        </div>
+        <div class="header-right">
+            <button class="btn-header " id="logout" >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path
+                        d="M5 11h8v2H5v3l-5-4 5-4v3zm-1 7h2.708a8 8 0 1 0 0-12H4A9.985 9.985 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10a9.985 9.985 0 0 1-8-4z"
+                        fill="#00e900"></path>
+                </svg>
+            </button>
+
+        </div>
+    </header>
     <main class="main-calc">
         <section>
             <p>
@@ -19,4 +43,5 @@
         </section>
     </main>
 </body>
+<script src="./src/user/logoutUser.js" type="module"></script>
 </html>

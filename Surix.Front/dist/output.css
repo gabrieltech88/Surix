@@ -631,6 +631,7 @@ tbody tr:hover td {
   padding-bottom: 20px;
   color: #ededed;
   font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
 }
 
 .my-swal-text {
@@ -702,6 +703,7 @@ tbody tr:hover td {
   flex-direction: column;
   margin-top: 1rem;
   width: 100%;
+  gap: 20px;
 }
 
 .line-line {
@@ -733,7 +735,7 @@ tbody tr:hover td {
 .line {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 16px;
 }
 
 .line1 {
@@ -765,14 +767,18 @@ tbody tr:hover td {
   border-radius: 18px;
   color: #ededed;
   text-align: center;
+  line-height: normal;
   font-family: "Inter", sans-serif;
   font-weight: bold;
   font-size: 0.8rem;
 }
 
 .campeonato {
+  display: flex;
+  gap: 6px;
   background-color: transparent;
   padding: 8px;
+  line-height: normal;
   align-items: center;
   border: 1px solid rgb(128, 128, 128);
   justify-content: center;
@@ -787,7 +793,7 @@ tbody tr:hover td {
 .porcentagem {
   display: flex;
   gap: 8px;
-  background-color: green;
+  background: linear-gradient(to right, #00e900, #007a00);
   text-align: center;
   padding: 8px;
   align-items: center;
@@ -833,6 +839,7 @@ tbody tr:hover td {
   align-items: center;
   padding: 14px 24px;
   border-radius: 4px;
+  width: 190px;
 }
 
 .casa1 {
@@ -850,7 +857,7 @@ tbody tr:hover td {
 }
 
 .odd1 {
-  color: #ededed;
+  color: #00e900;
   font-family: "Inter", sans-serif;
   font-weight: bold;
   font-size: 1rem;
@@ -868,7 +875,7 @@ tbody tr:hover td {
 }
 
 .retorno {
-  background-color: green;
+  background: linear-gradient(to right, #00e900, #007a00);
   text-align: center;
   padding: 12px;
   align-items: center;
@@ -892,7 +899,7 @@ tbody tr:hover td {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid gray;
+  border: 2px solid #808080;
   z-index: 2;
 }
 
@@ -900,6 +907,10 @@ tbody tr:hover td {
   color: #ededed;
   font-weight: bold;
   font-family: "Inter", sans-serif;
+}
+
+#body-sures {
+  overflow: scroll;
 }
 
 /*# sourceMappingURL=output.css.map */

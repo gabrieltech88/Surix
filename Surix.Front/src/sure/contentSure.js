@@ -32,10 +32,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     if(!Number.isInteger(pages)) {
         const page = Math.floor(pages) + 1
-        textPages.textContent = `1 - ${page}`
+        textPages.textContent = `1 / ${page}`
         paginas.push(page)
     } else {
-        textPages.textContent = `1 - ${pages}`
+        textPages.textContent = `1 / ${pages}`
         paginas.push(pages)
     }
 
@@ -66,7 +66,7 @@ btnLeft.addEventListener("click", () => {
     if (pageNumber > 1) {
         loadPage(pageNumber - 1);
         pageController -= 1
-        textPages.textContent = `${pageController} - ${paginas}`
+        textPages.textContent = `${pageController} / ${paginas}`
     }
 
 })
@@ -76,7 +76,7 @@ btnRight.addEventListener("click", () => {
     if(pageController < paginas) {
         loadPage(pageNumber + 1);
         pageController += 1
-        textPages.textContent = `${pageController} - ${paginas}`
+        textPages.textContent = `${pageController} / ${paginas}`
     }
 })
 
