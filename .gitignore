@@ -1,3 +1,5 @@
+.env
+
 # Binários do .NET
 bin/
 obj/

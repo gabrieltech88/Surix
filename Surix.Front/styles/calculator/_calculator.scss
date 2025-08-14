@@ -5,3 +5,91 @@
     justify-content: center;
     align-items: center;
 }
+
+#calculadora {
+    margin-top: 40px;
+    background-color: variables.$eerie-black;
+    width: 90%;
+    border-radius: 8px;
+    border: 1px solid gray;
+    padding: 0.8rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.title-calc {
+    color: variables.$anti-flash-white;
+    font-size: 2rem;
+    font-family: variables.$inter;
+    font-weight: bold;
+    line-height: normal;
+}
+
+.geral {
+    margin-top: 30px;
+    display: flex;
+    gap: 100px;
+    justify-content: space-around;
+}
+
+.inputs-calc {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    div {
+        label {
+            color: variables.$spring-green;
+            font-family: variables.$inter;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+    }
+
+}
+
+.input-calc {
+    border: 2px solid rgb(167, 166, 166);
+    border-radius: 0.3rem;
+    background-color: variables.$onyx;
+    color: variables.$anti-flash-white;
+    padding: 0.5rem;
+    width: 20rem;
+    outline: none;
+    /* remove o padrão */
+    transition: box-shadow 0.2s ease;
+
+    &:focus {
+        box-shadow:
+            0 0 0 2px variables.$eerie-black,
+            /* espaço branco (ou cor do fundo da página) */
+            0 0 0 5px variables.$spring-green;
+    }  
+
+    
+}
+
+.result-calc {
+    background-color: variables.$onyx;
+    display:  flex;
+    flex-direction: column;
+}
+
+.title-result {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: variables.$anti-flash-white;
+    font-family: variables.$inter;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.container-result {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 6px;
+    border: 1px solid gray;
+}

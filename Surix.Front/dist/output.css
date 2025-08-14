@@ -639,6 +639,25 @@ tbody tr:hover td {
   font-size: 1.2rem;
 }
 
+.chat-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #00e900;
+  color: white;
+  font-size: 24px;
+  width: 60px;
+  border-radius: 50%;
+  display: flex;
+  /* Centraliza o ícone */
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  /* Fica acima de outros elementos */
+  text-decoration: none;
+  height: 60px;
+}
+
 .container-stats {
   display: grid;
   align-self: center;
@@ -696,6 +715,84 @@ tbody tr:hover td {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#calculadora {
+  margin-top: 40px;
+  background-color: #242d39;
+  width: 90%;
+  border-radius: 8px;
+  border: 1px solid gray;
+  padding: 0.8rem;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.title-calc {
+  color: #ededed;
+  font-size: 2rem;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  line-height: normal;
+}
+
+.geral {
+  margin-top: 30px;
+  display: flex;
+  gap: 100px;
+  justify-content: space-around;
+}
+
+.inputs-calc {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.inputs-calc div label {
+  color: #00e900;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.input-calc {
+  border: 2px solid rgb(167, 166, 166);
+  border-radius: 0.3rem;
+  background-color: #1b232d;
+  color: #ededed;
+  padding: 0.5rem;
+  width: 20rem;
+  outline: none;
+  /* remove o padrão */
+  transition: box-shadow 0.2s ease;
+}
+.input-calc:focus {
+  box-shadow: 0 0 0 2px #242d39, 0 0 0 5px #00e900;
+}
+
+.result-calc {
+  background-color: #1b232d;
+  display: flex;
+  flex-direction: column;
+}
+
+.title-result {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ededed;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.container-result {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 6px;
+  border: 1px solid gray;
 }
 
 #section-sure {
