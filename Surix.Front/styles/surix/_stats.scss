@@ -1,34 +1,44 @@
 @use '../abstract/variables';
 
 .container-stats {
-    display: grid;
-    align-self: center;
+    display: flex;
+    background-color: variables.$card;
+    justify-content: space-between;
+    border: 1px solid rgb(43, 47, 59, 0.5);
+    padding: 1.6rem;
+    align-items: center;
+    border-radius: 8px;
     gap: 2rem;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    width: 90%;    
+    width: 23.5%;
 }
 
 .title-cards-stats {
-    color: rgb(167, 166, 166);
+    color: variables.$text;
     font-family: variables.$inter;
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 600;
 }
 
 .container-icon {
     display: flex;
-    width: 64px;
-    height: 64px;
-    background-color: variables.$onyx; /*#006d05;*/
+    width: 48px;
+    height: 48px;
+    background-color: variables.$primary; /*#006d05;*/
     justify-content: center;
     align-items: center;
     border-radius: 8px;
 }
 
+
+.container-sec-stats {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
 .img-stats {
-    width: 36px;
-    height: 36px;
+    width: 24px;
+    height: 24px;
 }
 
 .container-cards-stats {
@@ -40,16 +50,15 @@
 }
 
 .text-stats-info {
-    color: variables.$spring-green;
+    color: variables.$foreground;
     font-family: variables.$inter;
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 1.3rem;
     margin-bottom: 6px;
 }
 
 .container-text-stats {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-
+    gap: 10px;
 }

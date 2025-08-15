@@ -5,9 +5,9 @@
     flex-direction: column;
     width: 100%;
     height: 21.5rem;
-    background-color: variables.$eerie-black;
-    border-radius: 16px;
-    border: 1px solid gray;
+    background-color: variables.$card;
+    border-radius: 8px;
+    border: 1px solid rgb(43, 47, 59, 0.5);
     gap: 10px;
 }
 
@@ -18,25 +18,27 @@ table {
 }
 
 thead {
-    background-color: variables.$onyx;
+    background-color: transparent;
 }
 
 th {
     padding: 0.75rem;
     text-align: center;
-    color: variables.$anti-flash-white;
+    color: variables.$text;
     font-family: variables.$inter;
-    font-weight: bold;
+    font-weight: 600;
+    font-size: 0.9rem;
 }
 
 td {
     padding: 0.75rem;
     text-align: center;
-    color: variables.$anti-flash-white;
+    color: variables.$foreground;
     font-family: variables.$inter;
 }
 
-tbody {
+#body-table {
+    width: 100%;
     gap: 8px;
 }
 
@@ -52,22 +54,21 @@ tbody tr:hover td {
 .pages {
     display: flex;
     align-items: center;
-    width: 10rem;
+    gap: 12px;
 }
 
 .btn-pages {
     border: none;
-    background-color: transparent;
+    background-color: #006d05;
     text-align: center;
-    color: #00e900;
-    font-size: 1.5rem;
+    color: variables.$primary;
+    border-radius: 8px;
+    font-size: 1rem;
+    line-height: normal;
     font-weight: bold;
-    padding: 0.6rem;
+    padding: 0.4rem 0.8rem;
 }
 
-#btn-right {
-    margin-right: 2rem;
-}
 
 #text-pages {
     display: flex;
@@ -75,6 +76,10 @@ tbody tr:hover td {
     font-weight: bold;
     color: variables.$anti-flash-white;
     width: auto;
+}
+
+#btn-right {
+    margin-right: 1rem;
 }
 
 .text-table {
@@ -93,8 +98,8 @@ tbody tr:hover td {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #00e900;
-    color: white;
+    background: variables.$gradient-primary;
+    color: variables.$foreground;
     font-size: 24px;
     width: 60px;
     border-radius: 50%;

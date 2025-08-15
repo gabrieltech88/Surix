@@ -3,32 +3,21 @@
 .header {
     display: flex;
     flex-direction: row;
-    background-color: variables.$eerie-black;
-    border-bottom: 1px solid gray;
+    background-color: variables.$card;
+    border-bottom: 1px solid variables.$border;
     
     align-items: center;
     padding: 1rem;
     width: 100%;
     justify-content: space-between;
 
-
-    .header-left {
-        flex: 1; // apenas ocupa espaço
-    }
-
-    .header-center {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        justify-content: center; // centraliza os botões/informações
-        flex: 2; // pode ajustar peso para centralizar melhor
+    .img-logo {
+        background: variables.$gradient-primary;
     }
 
     .header-right {
         display: flex;
-        align-items: center;
-        flex: 1; // mantém logout no canto direito
-        justify-content: flex-end;
+        gap: 32px;
     }
     
     div {
@@ -40,21 +29,22 @@
             align-items: center;
             gap: 8px;
             font-size: 1.5rem;
-            color: variables.$spring-green;
+            color: variables.$primary;
             font-family: variables.$inter;
             font-weight: bold;
         }
     
     
         .info {
-            color: variables.$anti-flash-white;
+            color: variables.$text;
             font-family: variables.$inter;
             font-size: 0.8rem;
         }
     
         .container-infos {
             display: flex;
-            flex-direction: column;
+            align-items: center;
+            line-height: normal;
             gap: 0.4rem;
         }
     
@@ -81,19 +71,18 @@
         border: none;
         background-color: transparent;
         font-family: variables.$inter;
-        font-weight: 600;
-        color: variables.$anti-flash-white;
+        color: variables.$text;
         font-size: 1rem;
         text-decoration: none;
 
         &:hover {
-            color: variables.$spring-green;
+            color: variables.$foreground;
         }
     }
 
     .icon-btn {
-        height: 16px;
-        width: 16px;
+        height: 14px;
+        width: 14px;
     }
 }
 
