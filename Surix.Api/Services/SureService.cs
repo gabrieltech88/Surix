@@ -45,6 +45,7 @@ public class SureService
         var options = new ChromeOptions();
         options.AddArgument("--headless=new"); // headless mais novo
         options.AddArgument("--disable-blink-features=AutomationControlled"); // remove detecção
+        options.AddArgument("--mute-audio");
         options.AddArgument("--no-sandbox");
         options.AddArgument("--disable-gpu");
         options.AddArgument("--disable-infobars");

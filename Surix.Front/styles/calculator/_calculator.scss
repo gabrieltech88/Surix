@@ -1,22 +1,21 @@
 @use '../abstract/variables';
 
+
 .main-calc {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 40px;
+    width: 100%;
 }
 
 #calculadora {
-    margin-top: 40px;
-    background-color: variables.$eerie-black;
-    width: 90%;
-    border-radius: 8px;
-    border: 1px solid gray;
-    padding: 0.8rem;
-    justify-content: center;
-    align-items: center;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
 }
 
 .title-calc {
@@ -27,41 +26,47 @@
     line-height: normal;
 }
 
-.geral {
-    margin-top: 30px;
+.calc {
     display: flex;
-    gap: 100px;
-    justify-content: space-around;
+    flex-direction: column;
+    background-color: variables.$card;
+    border: 1px solid rgb(43, 47, 59, 0.5);
+    border-radius: 8px;
+    height: 35rem;
+    padding: 1.3rem;
+    gap: 20px;
+    width: 33rem;
 }
 
 .inputs-calc {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    display:  flex;
+    display: flex;
     flex-direction: column;
     padding: 1.5rem;
     border: 1px solid gray;
     border-radius: 8px;
 
-    div {
-        label {
-            color: variables.$spring-green;
-            font-family: variables.$inter;
-            font-weight: 600;
-            font-size: 0.8rem;
-        }
-    }
 
+    
+    
+}
+
+label {
+    color: variables.$primary;
+    font-family: variables.$inter;
+    font-weight: 600;
+    font-size: 0.8rem;
 }
 
 .input-calc {
-    border: 2px solid rgb(167, 166, 166);
+    border: 1px solid rgb(43, 47, 59, 0.5);
     border-radius: 0.3rem;
-    background-color: variables.$onyx;
-    color: variables.$anti-flash-white;
+    background-color: rgb(34, 37, 47, 0.5);
+    color: variables.$foreground;
     padding: 0.5rem;
-    width: 20rem;
+    width: 100%;
     outline: none;
     /* remove o padrão */
     transition: box-shadow 0.2s ease;
@@ -70,15 +75,15 @@
         box-shadow:
             0 0 0 2px variables.$eerie-black,
             /* espaço branco (ou cor do fundo da página) */
-            0 0 0 5px variables.$spring-green;
-    }  
+            0 0 0 5px variables.$primary;
+    }
 
-    
+
 }
 
 .result-calc {
     background-color: variables.$onyx;
-    display:  flex;
+    display: flex;
     flex-direction: column;
     padding: 1.5rem;
     border: 1px solid gray;
@@ -90,34 +95,37 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    color: variables.$anti-flash-white;
+    color: variables.$foreground;
     font-family: variables.$inter;
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 .container-result {
     display: flex;
-    padding: 0.6rem;
+    padding: 1.6rem;
+    background-color: rgb(34, 37, 47, 0.5);
+    align-items: center;
     justify-content: space-between;
     border-radius: 6px;
-    border: 1px solid gray;
+    border: 1px solid rgb(43, 47, 59, 0.5);
     font-family: variables.$inter;
 }
 
 .result {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 12px;
 }
 
-.aposta-text, .retorno-calc {
-    color: gray;
+.aposta-text {
+    color: variables.$text;
     font-size: 0.9rem;
 }
 
-.aposta, .valor {
-    color: variables.$spring-green;
+.aposta,
+.valor {
+    color: variables.$primary;
 }
 
 .valor {
@@ -126,11 +134,11 @@
 }
 
 .aposta {
-    font-weight: 600;
+    font-weight: 500;
 }
 
 hr {
-    background-color: gray;
+    background-color: rgb(43, 47, 59, 0.5);
     width: 100%;
     border: none;
     height: 1px;
@@ -139,16 +147,39 @@ hr {
 .container-text-sec {
     display: flex;
     justify-content: space-between;
+    background-color: rgb(34, 37, 47, 0.5);
+    border-radius: 8px;
     font-family: variables.$inter;
+    padding: 1rem;
 
-    
+
 }
 
 .text-sec {
-    color: variables.$anti-flash-white;
-    font-weight: 600;
+    color: variables.$text;
+    font-weight: 400;
 }
 
 .text-sec-value {
-    color: variables.$spring-green;
+    color: variables.$foreground;
+    font-weight: bold;
+}
+
+.container-text-sec-lucro {
+    display: flex;
+    padding: 1.5rem;
+    justify-content: space-between;
+    border-radius: 8px;
+    background: variables.$gradient-primary;
+
+    .valor-lucro {
+        color: variables.$background;
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    .text-lucro {
+        color: variables.$background;
+        font-weight: 500;
+    }
 }

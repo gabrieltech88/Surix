@@ -10,12 +10,15 @@
     <title>Surix</title>
 </head>
 
-<body id="body-surix">
+<body class="body-surix">
     <header class="header">
         <div class="header-left">
             <div class="container-infos">
-                <div class="logo">
-                    <img src="./assets/icon_gray.svg" alt="" style="height: 32px; width: 32px;" class="img-logo">
+                <div class="logo-surix">
+                    <div class="container-img-logo">
+                        <img src="./assets/icon_gray.svg" alt="" class="img-logo">
+
+                    </div>
                     <p class="title-info">Surix</p>
                 </div>
                 <p id="info" class="info">Gabriel Ramos • 30 registros</p>
@@ -47,7 +50,7 @@
             <div class="container-stats">
                 <div class="container-text-stats">
                     <p class="title-cards-stats">Sures no mês</p>
-                    <p class="text-stats-info" id="sure">20</p>
+                    <p class="text-stats-info" id="sure">0</p>
                 </div>
                 <div class="container-icon">
                     <img class="img-stats" src="./assets/list.svg" alt="">
@@ -57,7 +60,7 @@
 
                 <div class="container-text-stats">
                     <p class="title-cards-stats">Total Apostado no mês</p>
-                    <p class="text-stats-info" id="stake">R$ 50.000</p>
+                    <p class="text-stats-info" id="stake">R$ 0.00</p>
                 </div>
                 <div class="container-icon">
                     <img class="img-stats" src="./assets/wallet.svg" alt="">
@@ -67,7 +70,7 @@
 
                 <div class="container-text-stats">
                     <p class="title-cards-stats">ROI total do mês</p>
-                    <p class="text-stats-info" id="roi">25.68%</p>
+                    <p class="text-stats-info" id="roi">0.00%</p>
                 </div>
                 <div class="container-icon">
                     <img class="img-stats" src="./assets/percent.svg" alt="">
@@ -76,7 +79,7 @@
             <div class="container-stats">
                 <div class="container-text-stats">
                     <p class="title-cards-stats">Lucro total do mês</p>
-                    <p class="text-stats-info" id="lucro">R$ 6.500</p>
+                    <p class="text-stats-info" id="lucro">R$ 0.00</p>
                 </div>
                 <div class="container-icon">
                     <img class="img-stats" src="./assets/arrow.svg" alt="">
@@ -144,10 +147,9 @@
             <div class="container-title-surix">
                 <h2 class="title-cards">Suas sure</h2>
                 <div class="pages">
-                    <button id="btn-left" class="btn-pages">
-                        << </button>
-                            <p id="text-pages">1 - 10</p>
-                            <button id="btn-right" class="btn-pages"> >> </button>
+                    <button id="btn-left" class="btn-pages"> « </button>
+                    <p id="text-pages">1 - 1</p>
+                    <button id="btn-right" class="btn-pages"> » </button>
                 </div>
             </div>
             <table>
@@ -165,37 +167,57 @@
                     </tr>
                 </thead>
                 <tbody id="body-table">
-                    <tr>
-                        <td>2025-08-03</td>
-                        <td>Barcelona vs Real Madrid</td>
-                        <td>150</td>
-                        <td>Betano</td>
-                        <td>1.95</td>
-                        <td>888sport</td>
-                        <td>2.00</td>
-                        <td>-20</td>
-                        <td>-13.33%</td>
-                    </tr>
-                    <tr>
-                        <td>2025-08-03</td>
-                        <td>Barcelona vs Real Madrid</td>
-                        <td>150</td>
-                        <td>Betano</td>
-                        <td>1.95</td>
-                        <td>888sport</td>
-                        <td>2.00</td>
-                        <td>-20</td>
-                        <td>-13.33%</td>
-                    </tr>
+                <!--
+                    
+                <tr>
+                    <td>2025-08-03</td>
+                    <td>Barcelona vs Real Madrid</td>
+                    <td>150</td>
+                    <td>Betano</td>
+                    <td>1.95</td>
+                    <td>888sport</td>
+                    <td>2.00</td>
+                    <td>-20</td>
+                    <td>-13.33%</td>
+                </tr>
+                <tr>
+                    <td>2025-08-03</td>
+                    <td>Barcelona vs Real Madrid</td>
+                    <td>150</td>
+                    <td>Betano</td>
+                    <td class="green">1.95</td>
+                    <td>888sport</td>
+                    <td class="green"> 2.00</td>
+                    <td class="green">-20</td>
+                    <td class="green">-13.33%</td>
+                </tr>
+                -->
                 </tbody>
             </table>
         </section>
-        <section>
-            <div>
-
+        <section class="sec-resume">
+            <div class="container-title-surix-resume">
+                <h2 class="title-resume">Resumo do mês</h2>
             </div>
-            <div>
-
+            <div class="container-stats-resume">
+                <div class="container-stats-resume-stats">
+                    <div class="container-icon">
+                        <img src="./assets/arrow.svg" alt="" class="img-stats">
+                    </div>
+                    <div class="container-infos-stats-resume">
+                        <p class="title-cards-stats">Roi total do mês</p>
+                        <p class="text-cards-stats-resume" id="roi2">0.00%</p>
+                    </div>
+                </div>
+                <div class="container-stats-resume-stats">
+                    <div class="container-icon">
+                        <img src="./assets/arrow.svg" alt="" class="img-stats">
+                    </div>
+                    <div class="container-infos-stats-resume">
+                        <p class="title-cards-stats">Lucro total do mês</p>
+                        <p class="text-cards-stats-resume" id="lucro2">R$ 0.00</p>
+                    </div>
+                </div>
             </div>
         </section>
         <div>

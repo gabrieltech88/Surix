@@ -9,92 +9,92 @@
     <title>Surix</title>
 </head>
 
-<body>
+<body class="body-surix">
     <header class="header">
         <div class="header-left">
             <div class="container-infos">
-                <p class="title-info"><img src="./assets/icon_green.svg" alt="" style="height: 32px; width: 32px;">
-                    Surix</p>
+                <div class="logo-surix">
+                    <div class="container-img-logo">
+                        <img src="./assets/icon_gray.svg" alt="" class="img-logo">
+
+                    </div>
+                    <p class="title-info">Surix</p>
+                </div>
                 <p id="info" class="info">Gabriel Ramos • 30 registros</p>
             </div>
         </div>
-        <div class="header-center">
+        <div class="header-right">
             <a class="btn-header-locals" href="/surix"><img class="icon-btn" src="./assets/sheets.svg" alt="">
                 Dashboard</a>
             <a class="btn-header-locals" href="/calculadora"><img class="icon-btn" src="./assets/calculator.svg" alt="">
                 Calculadora</a>
             <a class="btn-header-locals" href="/sures"><img class="icon-btn" src="./assets/sure.svg" alt="">
                 Surebets</a>
-        </div>
-        <div class="header-right">
             <button class="btn-header " id="logout">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
                     <path fill="none" d="M0 0h24v24H0z"></path>
                     <path
                         d="M5 11h8v2H5v3l-5-4 5-4v3zm-1 7h2.708a8 8 0 1 0 0-12H4A9.985 9.985 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10a9.985 9.985 0 0 1-8-4z"
-                        fill="#00e900"></path>
+                        fill="#94a3b8"></path>
                 </svg>
             </button>
-
         </div>
     </header>
     <main class="main-calc">
+        <section class="container-title-surix-primary">
+            <h1 class="title-surix">Calculadora Surix</h1>
+            <p class="text-title-surix">Calcule suas apostas com precisão e maximize seus lucros</p>
+        </section>
         <section id="calculadora">
-            <h2 class="title-calc">
-                Calculadora Surix
-            </h2>
-            <div class="geral">
-                <div class="inputs-calc">
-                    <p class="title-result">Valores</p>
-                    <div style="display: flex; flex-direction: column; gap: 6px;">
-                        <label for="valor">Valor total</label>
-                        <input name="valor" type="text" class="input-calc">
+            <div class="calc">
+                <p class="title-result">Valores</p>
+                <div style="display: flex; flex-direction: column; gap: 6px;">
+                    <label for="valor">Valor total</label>
+                    <input name="valor" type="text" class="input-calc" id="input-valor-total">
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 6px;">
+                    <label for="odd1">Odd A</label>
+                    <input name="odd1" type="number" class="input-calc" id="input1">
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 6px;">
+                    <label for="odd2">Odd B</label>
+
+                    <input name="odd2" type="number" class="input-calc" id="input2">
+                </div>
+            </div>
+            <div class="calc">
+                <p class="title-result"><img src="./assets/arrow-white.svg" alt=""
+                        style="width: 24px; height: 24px;">Distribuição das Apostas</p>
+                <div class="container-result">
+                    <div class="result">
+                        <p class="aposta">Aposta A</p>
+                        <p class="aposta-text" id="aposta-text-1">Casa A - Odd </p>
                     </div>
-                    <div style="display: flex; flex-direction: column; gap: 6px;">
-                        <label for="odd1">Odd A</label>
-                        <input name="odd1" type="number" class="input-calc">
-                    </div>
-                    <div style="display: flex; flex-direction: column; gap: 6px;">
-                        <label for="odd2">Odd B</label>
-                        
-                        <input name="odd2" type="number" class="input-calc">
+                    <div class="result">
+                        <p class="valor" id="value1">R$ 0.00</p>
                     </div>
                 </div>
-                <div class="result-calc">
-                    <p class="title-result"><img src="./assets/arrow-white.svg" alt="" style="width: 36px; height: 36px;">Distribuição das Apostas</p>
-                    <div class="container-result">
-                        <div class="result">
-                            <p class="aposta">Aposta A</p>
-                            <p class="aposta-text">Casa A - Odd 1.50</p>
-                        </div>
-                        <div class="result">
-                            <p class="valor">R$500,91</p>
-                            <p class="retorno-calc">Retorno: R$1000</p>
-                        </div>
+                <div class="container-result">
+                    <div class="result">
+                        <p class="aposta">Aposta B</p>
+                        <p class="aposta-text" id="aposta-text-2">Casa B - Odd </p>
                     </div>
-                    <div class="container-result">
-                        <div class="result">
-                            <p class="aposta">Aposta B</p>
-                            <p class="aposta-text">Casa B - Odd 1.50</p>
-                        </div>
-                        <div class="result">
-                            <p class="valor">R$500,91</p>
-                            <p class="retorno-calc">Retorno: R$1000</p>
-                        </div>
+                    <div class="result">
+                        <p class="valor" id="value2">R$ 0.00</p>
                     </div>
-                    <hr>
-                    <div class="container-text-sec">
-                        <p class="text-sec">Total Apostado:</p>
-                        <p class="text-sec-value"> R$100</p>
-                    </div>
-                    <div class="container-text-sec">
-                        <p class="text-sec">Retorno Garantido:</p>
-                        <p class="text-sec-value"> R$100</p>
-                    </div>
-                    <div class="container-text-sec">
-                        <p class="text-sec">Lucro:</p>
-                        <p class="text-sec-value"> R$100</p>
-                    </div>
+                </div>
+                <hr>
+                <div class="container-text-sec">
+                    <p class="text-sec">Total Apostado:</p>
+                    <p class="text-sec-value" id="total-apostado"> R$ 0.00</p>
+                </div>
+                <div class="container-text-sec">
+                    <p class="text-sec">Retorno Garantido:</p>
+                    <p class="text-sec-value" id="retorno-garantido"> R$ 0.00</p>
+                </div>
+                <div class="container-text-sec-lucro">
+                    <p class="text-lucro">Lucro:</p>
+                    <p class="valor-lucro" id="lucro"> R$ 0.00</p>
                 </div>
             </div>
         </section>
@@ -105,5 +105,6 @@
     </main>
 </body>
 <script src="./src/user/logoutUser.js" type="module"></script>
+<script src="./src/sure/calculator.js" type="module"></script>
 
 </html>
