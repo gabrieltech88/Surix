@@ -13,7 +13,7 @@ namespace Surix.Api.Controllers
         public PageController(IWebHostEnvironment env)
         {
             // Caminho até a pasta Surix.Front
-            _pagesPath = Path.Combine(env.ContentRootPath, "..", "Surix.Front");
+            _pagesPath = Path.Combine(Directory.GetCurrentDirectory(), "../Surix.Front");
         }
 
         // Página pública

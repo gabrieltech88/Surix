@@ -99,14 +99,14 @@ var app = builder.Build();
 
 app.UseCors("PermitirFrontEnd");
 
+var frontPath = Path.Combine(Directory.GetCurrentDirectory(), "../Surix.Front");
+
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseHttpsRedirection();
 app.UseStaticFiles(new StaticFileOptions
 {
-    FileProvider = new PhysicalFileProvider(
-        Path.Combine(Directory.GetCurrentDirectory(), "..", "Surix.Front")
-    ),
+    FileProvider = new PhysicalFileProvider(frontPath),
     RequestPath = "" // raiz do site
 });
 
