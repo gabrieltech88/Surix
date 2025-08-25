@@ -1,6 +1,6 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.Data;
+
 using Surix.Api.Data.DTO;
 using Surix.Api.Data.Models;
 
