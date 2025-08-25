@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./dist/output.css">
     <link rel="icon" type="image/svg" href="./assets/icon_green.svg" />
     <title>Surix</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body id="body-sures">
@@ -16,7 +17,6 @@
                 <div class="logo-surix">
                     <div class="container-img-logo">
                         <img src="./assets/icon_gray.svg" alt="" class="img-logo">
-
                     </div>
                     <p class="title-info">Surix</p>
                 </div>
@@ -24,80 +24,48 @@
             </div>
         </div>
         <div class="header-right">
-            <a class="btn-header-locals" href="/surix"><img class="icon-btn" src="./assets/sheets.svg" alt="">
-                Dashboard</a>
-            <a class="btn-header-locals" href="/calculadora"><img class="icon-btn" src="./assets/calculator.svg" alt="">
-                Calculadora</a>
-            <a class="btn-header-locals" href="/sures"><img class="icon-btn" src="./assets/sure.svg" alt="">
-                Surebets</a>
-            <button class="btn-header " id="logout">
+            <a class="btn-header-locals" href="/surix">
+                <img class="icon-btn" src="./assets/sheets.svg" alt=""> Dashboard
+            </a>
+            <a class="btn-header-locals" href="/calculadora">
+                <img class="icon-btn" src="./assets/calculator.svg" alt=""> Calculadora
+            </a>
+            <a class="btn-header-locals" href="/sures">
+                <img class="icon-btn" src="./assets/sure.svg" alt=""> Surebets
+            </a>
+            <button class="btn-header" id="logout">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
                     <path fill="none" d="M0 0h24v24H0z"></path>
-                    <path
-                        d="M5 11h8v2H5v3l-5-4 5-4v3zm-1 7h2.708a8 8 0 1 0 0-12H4A9.985 9.985 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10a9.985 9.985 0 0 1-8-4z"
-                        fill="#94a3b8"></path>
+                    <path d="M5 11h8v2H5v3l-5-4 5-4v3zm-1 7h2.708a8 8 0 1 0 0-12H4A9.985 9.985 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10a9.985 9.985 0 0 1-8-4z" fill="#94a3b8"></path>
                 </svg>
             </button>
         </div>
     </header>
+
+    <!-- CONTAINER PRINCIPAL - EM CONSTRUÇÃO -->
+    <div class="container construction">
+        <h1>🚧 Em Construção 🚧</h1>
+        <p>Estamos preparando algo incrível! Volte em breve.</p>
+        <div class="loader"></div>
+    </div>
+
+    <!-- SEÇÃO DE SUREBETS - COMENTADA -->
+    <!--
     <section class="container-title-surix-primary">
         <h1 class="title-surix">Surebets Disponíveis</h1>
         <p class="text-title-surix">Explore as melhores oportunidades de arbitragem esportiva</p>
     </section>
     <section id="section-sure">
-        <!--
-            <div class="column">
-                <div class="card">
-                    <div class="line">
-                        <div class="line1">
-                            <div class="line-line1">
-                                <p class="categoria">Futebol</p>
-                                <p class="campeonato">La Liga</p>
-                            </div>
-                            <p class="porcentagem">
-                                <img src="./assets/arrow.svg" style="width: 16px; height: 16px;">
-                                3.25%
-                            </p>
-                        </div>
-                        <h2 class="evento">Evento</h2>
-                        <div class="container-data-hora">
-                            <p class="data"><img src="./assets/calendar.svg" style="height: 14px; width: 14px;">15/11/2025
-                            </p>
-                            <p class="hora"><img src="./assets/watch.svg" style="height: 14px; width: 14px;">16:00</p>
-                        </div>
-                        <div class="container-jogos">
-                            <div class="jogos">
-                                <div class="jogo">
-                                    <p class="casa1">Bet365</p>
-                                    <p class="mercado1">Vitória Real Madrclass</p>
-                                    <p class="odd1">2.10</p>
-                                </div>
-                                <div class="jogo">
-                                    <p class="casa1">Bet365</p>
-                                    <p class="mercado1">Vitória Real Madrclass</p>
-                                    <p class="odd1">2.10</p>
-                                </div>
-                            </div>
-                            <div class="container-vs">
-                                <p class="vs">VS</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="line-line">
-                        <p class="lucro-garantido"><img src="./assets/trophy.svg" alt=""
-                                style="width: 14px; height: 14px;">Lucro Garantido</p>
-                        <p class="retorno ">3.25% de retorno</p>
-                    </div>
-                </div>
-            </div>
-        -->
+        ...
     </section>
+    -->
+
     <a href="https://wa.me/5513997209208?text=Olá,%20preciso%20falar%20com%20o%20suporte" target="_blank"
-        class="chat-button">
+       class="chat-button">
         <img src="./assets/chat.svg" alt="" style="width: 28px; height: 28px;">
     </a>
-    <script src="./src/sure/getSures.js" type="module"></script>
+
+    <!--<script src="./src/sure/getSures.js" type="module"></script>-->
     <script src="./src/user/logoutUser.js" type="module"></script>
 </body>
-
 </html>
