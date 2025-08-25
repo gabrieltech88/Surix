@@ -25,7 +25,8 @@ builder.Services.AddCors(options =>
 });
 
 
-var connectionString = builder.Configuration["ConnectionString"];
+
+var connectionString = Environment.GetEnvironmentVariable("ConnectionString");
 
 builder.Services.AddDbContext<SurixContext>(opts => opts.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
