@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dist/output.css">
+    <link rel="icon" type="image/svg" href="./assets/icon_green.svg" />
+    <title>Surix - Cadastro</title>
+</head>
+
+<body>
+    <p class="logo"><img src="./assets/icon_green.svg" alt="">Surix</p>
+    <main class="main">
+        <div id="left-container">
+            <h1 class="title"><span class="bold">Bem-vindo</span> à <br>Estratégia</h1>
+            <p class="text-landing">Crie sua conta e transforme suas análises de apostas. A Surix te ajuda a calcular lucro, ROI, stake ideal e outros indicadores essenciais para avaliar apostas
+                seguras. Simplifique seus cálculos e tome decisões mais inteligentes.
+            </p>
+            <ul id="list-landing">
+                <li class="item-list-landing"><img src="./assets/circle_green.svg" alt="">Cadastro gratuito</li>
+                <li class="item-list-landing"><img src="./assets/circle_green.svg" alt=""> Acesso imediato</li>
+            </ul>
+        </div>
+        <form id="form" class="form">
+            <div class="container-title-text">
+                <h2 class="title-form"><img src="./assets/icon_gray.svg" alt="" class="icon">Criar Conta</h2>
+                <p class="text-form">Preencha os dados abaixo para começar</p>
+            </div>
+            <div class="container-input">
+                <div class="input">
+                    <label for="nome" class="label-input">Nome:</label>
+                    <input class="input-input" type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+                </div>
+                <div class="input">
+                    <label for="email" class="label-input">Email:</label>
+                    <input class="input-input" type="text" id="email" name="email" placeholder="seu@email.com" required>
+                </div>
+                <div class="input">
+                    <label for="user" class="label-input">Nome de Usuário:</label>
+                    <input class="input-input" type="text" id="user" name="user" placeholder="Crie um nome de usuário" required>
+                </div>
+                <div class="input">
+                    <label for="password" class="label-input">Senha:</label>
+                    <input class="input-input" type="password" id="password" name="password" placeholder="Mínimo 8 caracteres" required>
+                </div>
+                <div class="container-btn">
+                    <button id="btn-form" class="btn" type="submit">Criar Conta</button>
+                    <p class="placeholder-login">Já tem uma conta? <a class="placeholder-link" href="https://localhost:8800">Fazer login</a></p>
+                </div>
+            </div>
+        </form>
+    </main>
+    <script src="./src/user/registerUser.js" type="module"></script>
+</body>
+
+</html>
