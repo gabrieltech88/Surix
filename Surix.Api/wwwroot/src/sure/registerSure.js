@@ -49,7 +49,7 @@ btn.addEventListener("click", async () => {
         stake: stakeTotal
     }
 
-    const response = await fetch("https://localhost:8800/sure", {
+    const response = await fetch("https://surix.runasp.net/sure", {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',

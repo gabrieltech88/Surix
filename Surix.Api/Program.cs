@@ -14,6 +14,8 @@ using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Configuration.AddEnvironmentVariables();
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("PermitirFrontEnd", policy =>
@@ -100,14 +102,7 @@ app.UseCors("PermitirFrontEnd");
 
 app.UseAuthentication();
 app.UseAuthorization();
-app.UseHttpsRedirection();
-app.UseStaticFiles(new StaticFileOptions
-{
-    FileProvider = new PhysicalFileProvider(
-        Path.Combine(Directory.GetCurrentDirectory(), "..", "Surix.Front")
-    ),
-    RequestPath = "" // raiz do site
-});
+app.UseStaticFiles();
 
 app.MapControllers();
 

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.FileProviders;
+using Microsoft.AspNetCore.Hosting;
 
 namespace Surix.Api.Controllers
 {
@@ -8,53 +9,39 @@ namespace Surix.Api.Controllers
     [Route("")]
     public class PageController : ControllerBase
     {
-        private readonly string _pagesPath;
+        private readonly IWebHostEnvironment _env;
 
         public PageController(IWebHostEnvironment env)
         {
-            // Caminho até a pasta Surix.Front
-            _pagesPath = Path.Combine(env.ContentRootPath, "..", "Surix.Front");
+            _env = env;
         }
 
-        // Página pública
-        [HttpGet]
-        public IActionResult Index()
+        private IActionResult GetFile(string fileName)
         {
-            var filePath = Path.Combine(_pagesPath, "index.html");
+            var filePath = Path.Combine(_env.WebRootPath, fileName);
+            if (!System.IO.File.Exists(filePath))
+                return NotFound();
+
             return PhysicalFile(filePath, "text/html");
         }
+        
+        [HttpGet]
+        public IActionResult Index() => GetFile("index.html");
 
-        // Página protegida
         [HttpGet("surix")]
         [Authorize]
-        public IActionResult GetSurix()
-        {
-            var filePath = Path.Combine(_pagesPath, "surix.html");
-            return PhysicalFile(filePath, "text/html");
-        }
+        public IActionResult GetSurix() => GetFile("surix.html");
 
         [HttpGet("cadastro")]
-        public IActionResult GetCadastro()
-        {
-            var filePath = Path.Combine(_pagesPath, "cadastro.html");
-            return PhysicalFile(filePath, "text/html");
-        }
-
+        public IActionResult GetCadastro() => GetFile("cadastro.html");
 
         [HttpGet("calculadora")]
         [Authorize]
-        public IActionResult GetCalculadora()
-        {
-            var filePath = Path.Combine(_pagesPath, "calculadora.html");
-            return PhysicalFile(filePath, "text/html");
-        }
+        public IActionResult GetCalculadora() => GetFile("calculadora.html");
 
         [HttpGet("sures")]
         [Authorize]
-        public IActionResult GetSures()
-        {
-            var filePath = Path.Combine(_pagesPath, "sures.html");
-            return PhysicalFile(filePath, "text/html");
-        }
+        public IActionResult GetSures() => GetFile("sures.html");
+
     }
 }

@@ -11,7 +11,7 @@ form.addEventListener("submit", async (event) => {
     const userName = event.target.user.value;
     const password = event.target.password.value;
 
-    const response = await fetch("https://localhost:8800/user/create", {
+    const response = await fetch("https://surix.runasp.net/user/create", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -25,7 +25,7 @@ form.addEventListener("submit", async (event) => {
     })
 
     if (response.ok) {
-        window.location.href = "https://localhost:8800/";
+        window.location.href = "https://surix.runasp.net/";
         btn.textContent = "Criar Conta"
     } else {
         alert("Falha ao cadastrar usuário")

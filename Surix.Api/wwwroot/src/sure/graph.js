@@ -61,7 +61,7 @@ const grafico = new Chart(ctx, {
 document.addEventListener("DOMContentLoaded", async () => {
 
     const token = getCookie('jwt')
-    const response = await fetch(`https://localhost:8800/sure/roi`, {
+    const response = await fetch(`https://surix.runasp.net/sure/roi`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",

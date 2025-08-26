@@ -14,7 +14,7 @@ form.addEventListener("submit", async (event) => {
 
     btn.textContent = "Logando..."
 
-    const response = await fetch("https://localhost:8800/user/manipulation/login", {
+    const response = await fetch("https://surix.runasp.net/user/manipulation/login", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -23,7 +23,7 @@ form.addEventListener("submit", async (event) => {
     })
 
     if (response.ok) {
-        const response2 = await fetch("https://localhost:8800/surix")
+        const response2 = await fetch("https://surix.runasp.net/surix")
 
         if (response2.ok) {
             btn.textContent = "Entrar"

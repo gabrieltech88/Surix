@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.log(token)
     table.innerHTML = "";
 
-    const response = await fetch("https://localhost:8800/sure/content", {
+    const response = await fetch("https://surix.runasp.net/sure/content", {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -88,7 +88,7 @@ const loadPage = async (page) => {
     table.innerHTML = "";
 
     // faz fetch com pageNumber e pageSize
-    const response = await fetch(`https://localhost:8800/sure/content?pageNumber=${pageNumber}&pageSize=${pageSize}`, {
+    const response = await fetch(`https://surix.runasp.net/sure/content?pageNumber=${pageNumber}&pageSize=${pageSize}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",

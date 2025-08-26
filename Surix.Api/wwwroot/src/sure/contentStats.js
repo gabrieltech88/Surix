@@ -13,7 +13,7 @@ function animarNumero(element, valorFinal, duracao = 1000, prefixo = "", casasDe
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-    const response = await fetch("https://localhost:8800/sure/stats");
+    const response = await fetch("https://surix.runasp.net/sure/stats");
     const data = await response.json();
 
     animarNumero(document.getElementById("lucro"), data.lucroMensal, 1000, "R$ ", 2); // 2 casas decimais
