@@ -14,6 +14,8 @@ using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Configuration.AddEnvironmentVariables();
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("PermitirFrontEnd", policy =>
@@ -25,8 +27,7 @@ builder.Services.AddCors(options =>
 });
 
 
-
-var connectionString = Environment.GetEnvironmentVariable("ConnectionString");
+var connectionString = builder.Configuration["ConnectionString"];
 
 builder.Services.AddDbContext<SurixContext>(opts => opts.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
@@ -99,16 +100,9 @@ var app = builder.Build();
 
 app.UseCors("PermitirFrontEnd");
 
-var frontPath = Path.Combine(Directory.GetCurrentDirectory(), "../Surix.Front");
-
 app.UseAuthentication();
 app.UseAuthorization();
-app.UseHttpsRedirection();
-app.UseStaticFiles(new StaticFileOptions
-{
-    FileProvider = new PhysicalFileProvider(frontPath),
-    RequestPath = "" // raiz do site
-});
+app.UseStaticFiles();
 
 app.MapControllers();
 

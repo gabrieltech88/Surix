@@ -1,0 +1,178 @@
+@use '../abstract/variables';
+
+.container-table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 21.5rem;
+    background-color: variables.$card;
+    border-radius: 8px;
+    border: 1px solid rgb(43, 47, 59, 0.5);
+    gap: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: transparent;
+}
+
+thead {
+    background-color: transparent;
+}
+
+th {
+    padding: 0.75rem;
+    text-align: center;
+    color: variables.$text;
+    font-family: variables.$inter;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+td {
+    padding: 0.75rem;
+    text-align: center;
+    color: variables.$foreground;
+    font-family: variables.$inter;
+}
+
+#body-table {
+    width: 100%;
+    gap: 8px;
+}
+
+.green {
+    color: variables.$primary;
+}
+
+tbody tr:hover {
+    background-color: #006d05;
+
+}
+
+tbody tr:hover td {
+    color: variables.$spring-green;
+}
+
+.pages {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.btn-pages {
+    border: none;
+    background: variables.$gradient-primary;
+    text-align: center;
+    color: variables.$background;
+    border-radius: 8px;
+    font-size: 1rem;
+    line-height: normal;
+    font-weight: bold;
+    padding: 0.4rem 0.8rem;
+    white-space: nowrap;
+}
+
+
+#text-pages {
+    font-family: variables.$inter;
+    font-weight: bold;
+    color: variables.$foreground;
+    white-space: nowrap;
+    /* força o texto a ficar em uma linha só */
+    margin: 0;
+    /* zera margem do <p> */
+}
+
+#btn-right {
+    margin-right: 1rem;
+}
+
+.text-table {
+    padding-bottom: 20px;
+    color: variables.$anti-flash-white;
+    font-family: variables.$inter;
+    font-size: 0.9rem;
+}
+
+.my-swal-text {
+    font-family: variables.$inter;
+    font-size: 1.2rem;
+}
+
+.chat-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: variables.$gradient-primary;
+    color: variables.$foreground;
+    font-size: 24px;
+    width: 60px;
+    border-radius: 50%;
+    display: flex;
+    /* Centraliza o ícone */
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    /* Fica acima de outros elementos */
+    text-decoration: none;
+    height: 60px;
+
+}
+
+.sec-resume {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: variables.$card;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid rgb(43, 47, 59, 0.5);
+}
+
+.container-stats-resume {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.2rem;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.container-stats-resume-stats {
+    display: flex;
+    width: 49%;
+    padding: 1.3rem;
+    border: 1px solid rgb(43, 47, 59, 0.5);
+    background-color: rgb(34, 37, 47, 0.5);
+    border-radius: 8px;
+    gap: 16px;
+}
+
+.container-infos-stats-resume {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.text-cards-stats-resume {
+    font-size: 1.3rem;
+    color: variables.$primary;
+    font-weight: bold;
+}
+
+.title-resume {
+    display: flex;
+    text-align: left;
+    margin-bottom: 0.8rem;
+    color: variables.$foreground;
+    font-size: 1.3rem;
+    margin-top: 1.6rem;
+    font-family: variables.$inter;
+    font-weight: 600;
+    padding-left: 2rem;
+    width: 100%;
+}

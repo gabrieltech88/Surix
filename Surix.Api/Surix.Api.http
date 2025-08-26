@@ -1,4 +1,4 @@
-@Surix.Api_HostAddress = http://localhost:5198
+@Surix.Api_HostAddress = https://surix.runasp.net
 
 GET {{Surix.Api_HostAddress}}/weatherforecast/
 Accept: application/json
