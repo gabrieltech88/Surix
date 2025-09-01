@@ -1,0 +1,280 @@
+@use '../abstract/variables';
+
+#body-sures {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    font-family: variables.$inter;
+}
+
+#section-sure {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    width: 100%;
+    gap: 20px;
+
+}
+
+.line-line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid rgb(43, 47, 59, 0.5);
+    gap: 10px;
+}
+
+.column {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: variables.$card;
+    gap: 20px;
+    padding: 20px;
+    width: 28.5rem;
+    border: 1px solid rgb(43, 47, 59, 0.5);
+    border-radius: 10px;
+}
+
+.line {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.line1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.line-line1 {
+    display: flex;
+    gap: 10px;
+}
+
+.container-data-hora {
+    display: flex;
+    gap: 8px;
+}
+
+.container-jogos {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+}
+
+.jogos {
+    display: flex;
+    gap: 20px;
+}
+
+.categoria {
+    background-color: variables.$primary;
+    padding: 4px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    color: variables.$background;
+    text-align: center;
+    line-height: normal;
+    font-family: variables.$inter;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.campeonato {
+    display: flex;
+    gap: 6px;
+    background-color: transparent;
+    padding: 4px;
+    line-height: normal;
+    align-items: center;
+    border: 0.5px solid variables.$text;
+    justify-content: center;
+    border-radius: 18px;
+    color: variables.$text;
+    font-family: variables.$inter;
+    font-weight: bold;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.porcentagem {
+    display: flex;
+    gap: 8px;
+    background: variables.$gradient-primary;
+    text-align: center;
+    padding: 4px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    color: variables.$background;
+    font-family: variables.$inter;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.evento {
+    color: variables.$anti-flash-white;
+    font-family: variables.$inter;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.data {
+    display: flex;
+    gap: 4px;
+    color: variables.$text;
+    font-family: variables.$inter;
+    font-size: 0.9rem;
+    font-weight: 400;
+
+}
+
+.hora {
+    display: flex;
+    gap: 4px;
+    color: variables.$text;
+    font-family: variables.$inter;
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+
+.jogo {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(34, 37, 47, 0.5);
+    border: 1px solid rgb(43, 47, 59, 0.5);
+    gap: 18px;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 24px;
+    border-radius: 8px;
+    width: 190px;
+}
+
+.casa1 {
+    color: variables.$text;
+    font-family: variables.$inter;
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+
+.mercado1 {
+    color: variables.$text;
+    font-family: variables.$inter;
+    font-weight: 400;
+    font-size: 0.8rem;
+}
+
+.odd1 {
+    color: variables.$primary;
+    font-family: variables.$inter;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.lucro-garantido {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 20px;
+    color: variables.$text;
+    font-family: variables.$inter;
+    font-weight: 400;
+    font-size: 0.8rem;
+}
+
+.retorno {
+    background: variables.$gradient-primary;
+    text-align: center;
+    padding: 12px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    color: variables.$background;
+    font-family: variables.$inter;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.container-vs {
+    display: flex;
+    background-color: rgb(34, 37, 47, 0.5);
+    border: 1px solid rgb(43, 47, 59, 0.5);
+    border-radius: 50%;
+    width: 48px;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+}
+
+.vs {
+    text-align: center;
+    justify-content: center;
+    color: variables.$foreground;
+    font-size: 0.8rem;
+    font-weight: bold;
+    font-family: variables.$inter;
+
+}
+
+#body-sures {
+    overflow: scroll;
+}
+
+/* ESTILOS “EM CONSTRUÇÃO” */
+.construction {
+    max-width: 600px;
+    padding: 20px;
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+
+    h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        animation: pulse 2s infinite;
+    }
+
+    p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+    }
+
+    .loader {
+        border: 5px solid rgba(255,255,255,0.3);
+        border-top: 5px solid #fff;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        margin: 0 auto;
+        animation: spin 1s linear infinite;
+    }
+}
+
+/* ANIMAÇÕES */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.1); }
+}
+
+/* RESPONSIVO */
+@media (max-width: 600px) {
+    .construction h1 { font-size: 2rem; }
+    .construction p { font-size: 1rem; }
+}
