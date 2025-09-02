@@ -1,5 +1,6 @@
 import getCookie from "./registerSure.js"
 
+
 const table = document.getElementById('body-table')
 const btnLeft = document.getElementById('btn-left')
 const btnRight = document.getElementById('btn-right')
@@ -11,12 +12,14 @@ let pageSize = 5
 let paginas = []
 let pageController = 1
 
+
+
 document.addEventListener("DOMContentLoaded", async () => {
     const token = getCookie('jwt')
     console.log(token)
     table.innerHTML = "";
 
-    const response = await fetch("https://surix.runasp.net/sure/content", {
+    const response = await fetch(`${window.env.PROD}/sure/content`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -46,7 +49,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         const tr = document.createElement("tr");
 
         tr.innerHTML = `
-            <td>${sure.date}</td>
+            <td>${formatDate(sure.date)}</td>
             <td>${sure.event}</td>
             <td>${sure.stake}</td>
             <td>${sure.casaA}</td>
@@ -88,7 +91,7 @@ const loadPage = async (page) => {
     table.innerHTML = "";
 
     // faz fetch com pageNumber e pageSize
-    const response = await fetch(`https://surix.runasp.net/sure/content?pageNumber=${pageNumber}&pageSize=${pageSize}`, {
+    const response = await fetch(`${window.env.PROD}/sure/content?pageNumber=${pageNumber}&pageSize=${pageSize}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -103,7 +106,7 @@ const loadPage = async (page) => {
         const tr = document.createElement("tr");
 
         tr.innerHTML = `
-            <td>${sure.date}</td>
+            <td>${formatDate(sure.date)}</td>
             <td>${sure.event}</td>
             <td>${sure.stake}</td>
             <td>${sure.casaA}</td>
@@ -120,5 +123,10 @@ const loadPage = async (page) => {
 
 };
 
+function formatDate(dateString) {
+    const [datePart] = dateString.split(' '); // Pega apenas a parte da data (descarta hora)
+    const [year, month, day] = datePart.split('-');
+    return `${day}/${month}/${year}`;
+}
 
 export default loadPage;

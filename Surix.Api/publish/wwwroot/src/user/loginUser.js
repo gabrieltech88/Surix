@@ -1,6 +1,7 @@
 const btn = document.getElementById("btn-form-login")
 const form = document.getElementById("form-login")
 
+
 form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
@@ -14,7 +15,7 @@ form.addEventListener("submit", async (event) => {
 
     btn.textContent = "Logando..."
 
-    const response = await fetch("https://surix.runasp.net/user/manipulation/login", {
+    const response = await fetch(`${window.env.PROD}/user/manipulation/login`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -23,13 +24,28 @@ form.addEventListener("submit", async (event) => {
     })
 
     if (response.ok) {
-        const response2 = await fetch("https://surix.runasp.net/surix")
+        const response2 = await fetch(`${window.env.PROD}/surix`)
 
         if (response2.ok) {
             btn.textContent = "Entrar"
             window.location.href = "/surix"; // redireciona manualmente
         }
     }
+
+    Swal.fire({
+        icon: 'error',
+        title: 'Erro!',
+        text: 'Senha ou Usuário incorreto',
+        customClass: {
+            content: 'my-swal-text' // para o texto principal
+        },
+        timer: 5000,
+        timerProgressBar: true,
+        confirmButtonText: 'OK',
+        background: '#1b232d',
+        color: '#fff',
+        confirmButtonColor: '#f02727ff'
+    });
 
     btn.textContent = "Entrar"
 })

@@ -42,6 +42,8 @@ namespace Surix.Api.Controllers
 
             return Ok("Usuário Deslogado");
         }
+
+        
     }
 }
 

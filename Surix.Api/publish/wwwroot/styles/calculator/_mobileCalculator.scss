@@ -2,4 +2,33 @@
     #calculadora {
         flex-direction: column;
     }
+    
+    .calc {
+        height: auto;
+        width: 85%;
+    }
+
+    .title-result {
+        font-size: 1.3rem;
+    }
+
+    .calc label {
+        font-size: 1.1rem;
+    }
+
+    .aposta {
+        font-size: 1.3rem;
+    }
+
+    .aposta-text {
+        font-size: 1rem;
+    }
+
+    .valor {
+        font-size: 1.5rem;
+    }
+
+    .text-sec, .text-sec-value, .text-lucro {
+        font-size: 1.1rem;
+    }
 }

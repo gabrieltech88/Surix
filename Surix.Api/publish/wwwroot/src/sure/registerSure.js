@@ -1,4 +1,7 @@
 import loadPage from "./contentSure.js";
+;
+;
+
 
 const btn = document.getElementById('btn-surix');
 let pageNumber = 1
@@ -49,7 +52,7 @@ btn.addEventListener("click", async () => {
         stake: stakeTotal
     }
 
-    const response = await fetch("https://surix.runasp.net/sure", {
+    const response = await fetch(`${window.env.PROD}/sure`, {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',

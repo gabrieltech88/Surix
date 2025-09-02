@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="./dist/output.css">
     <link rel="icon" type="image/svg" href="./assets/icon_green.svg" />
     <title>Surix</title>
+    <script>
+        // Simulando "variáveis de ambiente"
+        window.env = {
+            DEV: "https://localhost:443",
+            PROD: "https://surix.runasp.net"
+        };
+    </script>
 </head>
 
 <body class="body-surix">
@@ -29,7 +36,7 @@
             <a class="btn-header-locals" href="/calculadora"><img class="icon-btn" src="./assets/calculator.svg" alt="">
                 <span class="span-header">Calculadora</span></a>
             <a class="btn-header-locals" href="/sures"><img class="icon-btn" src="./assets/sure.svg" alt="">
-               <span class="span-header"> Surebets</span></a>
+                <span class="span-header"> Surebets</span></a>
             <button class="btn-header " id="logout">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
                     <path fill="none" d="M0 0h24v24H0z"></path>
@@ -106,8 +113,9 @@
             <img src="./assets/chat.svg" alt="" style="width: 28px; height: 28px;">
         </a>
     </main>
+    <script src="./src/user/logoutUser.js" type="module"></script>
+    <script src="./src/sure/calculator.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
-<script src="./src/user/logoutUser.js" type="module"></script>
-<script src="./src/sure/calculator.js" type="module"></script>
 
 </html>

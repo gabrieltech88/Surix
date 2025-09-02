@@ -697,46 +697,46 @@
         },
         "native": {
           "Microsoft.DiaSymReader.Native.x86.dll": {
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "14.29.30152.0"
           },
           "System.IO.Compression.Native.dll": {
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "7.0.2024.26716"
           },
           "clretwrc.dll": {
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "7.0.2024.26716"
           },
           "clrgc.dll": {
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "7.0.2024.26716"
           },
           "clrjit.dll": {
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "7.0.2024.26716"
           },
           "coreclr.dll": {
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "7.0.2024.26716"
           },
           "createdump.exe": {
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "7.0.2024.26716"
           },
           "hostfxr.dll": {
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "7.0.2024.26716"
           },
           "hostpolicy.dll": {
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "7.0.2024.26716"
           },
           "mscordaccore.dll": {
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "7.0.2024.26716"
           },
           "mscordaccore_x86_x86_7.0.2024.26716.dll": {
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "7.0.2024.26716"
           },
           "mscordbi.dll": {
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "7.0.2024.26716"
           },
           "mscorrc.dll": {
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "7.0.2024.26716"
           },
           "msquic.dll": {
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "2.3.5.0"
           }
         }
       },
@@ -1260,7 +1260,7 @@
           },
           "System.Diagnostics.EventLog.Messages.dll": {
             "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.22.51805"
+            "fileVersion": "0.0.0.0"
           },
           "System.Diagnostics.EventLog.dll": {
             "assemblyVersion": "7.0.0.0",
@@ -1285,7 +1285,7 @@
         },
         "native": {
           "aspnetcorev2_inprocess.dll": {
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "17.0.24141.20"
           }
         }
       },

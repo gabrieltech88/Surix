@@ -1,3 +1,6 @@
+;
+;
+
 const form = document.getElementById('form')
 const btn = document.getElementById('btn-form')
 
@@ -11,7 +14,7 @@ form.addEventListener("submit", async (event) => {
     const userName = event.target.user.value;
     const password = event.target.password.value;
 
-    const response = await fetch("https://surix.runasp.net/user/create", {
+    const response = await fetch(`${window.env.PROD}/user/create`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -25,10 +28,39 @@ form.addEventListener("submit", async (event) => {
     })
 
     if (response.ok) {
-        window.location.href = "https://surix.runasp.net/";
-        btn.textContent = "Criar Conta"
+        Swal.fire({
+            icon: 'success',
+            title: 'Sucesso!',
+            text: 'Usuário cadastrado com sucesso!',
+            customClass: {
+                content: 'my-swal-text' // para o texto principal
+            },
+            timer: 3000,
+            timerProgressBar: true,
+            confirmButtonText: 'OK',
+            background: '#1b232d',
+            color: '#fff',
+            confirmButtonColor: '#00e900'
+        }).then(() => {
+            // Após o alerta ser fechado, redireciona
+            window.location.href = `${window.env.PROD}`;
+            btn.textContent = "Criar Conta";
+        });
     } else {
-        alert("Falha ao cadastrar usuário")
+        Swal.fire({
+            icon: 'error',
+            title: 'Erro!',
+            text: 'Ocorreu um erro ao cadastrar o usuário',
+            customClass: {
+                content: 'my-swal-text' // para o texto principal
+            },
+            timer: 5000,
+            timerProgressBar: true,
+            confirmButtonText: 'OK',
+            background: '#1b232d',
+            color: '#fff',
+            confirmButtonColor: '#f02727ff'
+        });
         btn.textContent = "Criar Conta"
     }
 

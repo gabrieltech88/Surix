@@ -1,4 +1,7 @@
 import getCookie from "./registerSure.js";
+;
+;
+
 
 const ctx = document.getElementById('meuGrafico').getContext('2d');
 
@@ -61,7 +64,7 @@ const grafico = new Chart(ctx, {
 document.addEventListener("DOMContentLoaded", async () => {
 
     const token = getCookie('jwt')
-    const response = await fetch(`https://surix.runasp.net/sure/roi`, {
+    const response = await fetch(`${window.env.PROD}/sure/roi`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",

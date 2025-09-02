@@ -1,3 +1,7 @@
+;
+;
+
+
 function calcularLucro(odd1, odd2) {
     const soma = (1 / odd1) + (1 / odd2);
     const porcentagem = soma * 100;

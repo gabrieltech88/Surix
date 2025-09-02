@@ -1,4 +1,5 @@
 .env
+./Surix.Api/publish
 
 # Binários do .NET
 bin/

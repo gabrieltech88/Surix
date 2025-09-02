@@ -4,6 +4,7 @@ using Surix.Api.Data.Models;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Surix.Api.Data.DTO;
+using Microsoft.AspNetCore.Components.Web;
 
 namespace Surix.Api.Data.DAL
 {
@@ -48,9 +49,43 @@ namespace Surix.Api.Data.DAL
                 Console.WriteLine($"Menssagem de erro:{ex.Message}");
                 Console.WriteLine($"Pilha de erro: {ex.StackTrace}");
                 Console.WriteLine($"Origem do erro: {ex.Source}");
-                
+
                 return StatusCode(500, "Erro interno no servidor");
             }
+        }
+
+        [HttpPatch("password")]
+        public async Task<IActionResult> PasswordReset([FromBody] PasswordResetRequest dto)
+        {
+            try
+            {
+                User user = await _userManager.FindByNameAsync(dto.UserName);
+                var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+                IdentityResult result = await _userManager.ResetPasswordAsync(user, token, dto.Password);
+
+                if (result.Succeeded)
+                {
+                    return Ok("Senha trocada com sucesso!");
+                }
+                else
+                {
+                    foreach (var erro in result.Errors)
+                    {
+                        Console.WriteLine($"Erro: {erro.Code} - {erro.Description}");
+                    }
+                    return BadRequest("Falha ao cadastrar usuário");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Menssagem de erro:{ex.Message}");
+                Console.WriteLine($"Pilha de erro: {ex.StackTrace}");
+                Console.WriteLine($"Origem do erro: {ex.Source}");
+
+                return StatusCode(500, "Erro interno no servidor");
+            }
+            
         }
     }
 }

@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="./dist/output.css">
     <link rel="icon" type="image/svg" href="./assets/icon_green.svg" />
     <title>Surix - Login</title>
+      <script>
+        // Simulando "variáveis de ambiente"
+        window.env = {
+            DEV: "https://localhost:443",
+            PROD: "https://surix.runasp.net"
+        };
+    </script>
 </head>
 
 <body>
@@ -23,9 +30,9 @@
             <div class="container-title-text">
                 <h2 class="title-form title-form-login"><img src="./assets/icon_gray.svg" alt="" class="icon">Bem-vindo
                     de volta</h2>
-                <p class="text-form">Entre na sua conta para continuar</p>
+                <p class="text-form text-form-login">Entre na sua conta para continuar</p>
             </div>
-            <div class="container-input">
+            <div class="container-input container-input-login">
                 <div class="input">
                     <label for="userName" class="label-input">Nome de Usuário:</label>
                     <input class="input-input input-login" type="text" id="userName" name="userName"
@@ -43,15 +50,36 @@
                         <input type="checkbox">
                         <p>Lembre de mim</p>
                     </div>
-                    <a href="" class="placeholder-link">Esqueci minha senha</a>
+                    <button href="" id="placeholder-link" class="placeholder-link">Esqueci minha senha</button>
                 </div>
                 <button id="btn-form-login" class="btn btn-login" type="submit">Entrar</button>
-                <p class="placeholder-login">Não tem uma conta? <a class="placeholder-link"
+                <p class="placeholder-login placeholder-login-login">Não tem uma conta? <a class="placeholder-link"
                         href="https://surix.runasp.net/cadastro">Cadastre-se</a></p>
             </div>
         </form>
+        <form id="form-forgot">
+            <div class="header-forgot">
+                <h3 class="title-forgot">Redefina sua senha</h3>
+                <button class="x" id="x">X</button>
+            </div>
+            <div class="container-input-forgot">
+                <label class="label-forgot" for="usernameForgot">Nome de Usuário:</label>
+                <input type="text" name="usernameForgot" id="usernameForgot" class="input-forgot"  placeholder="Digite seu nome de usuário">
+            </div>
+            <div class="container-input-forgot">
+                <label class="label-forgot" for="newPassword"> Nova Senha:</label>
+                <input type="password" name="newPassword" class="input-forgot"   id="newPassword" placeholder="Digite a nova senha">
+            </div>
+            <div class="container-input-forgot">
+                <label class="label-forgot" for="confirmedPassword">Confirme sua senha:</label>
+                <input type="password" name="confirmedPassword" id="confirmedPassword" class="input-forgot"  placeholder="Confirme a nova senha">
+            </div>
+            <button type="submit" class="btn-submit-forgot" id="btn-submit-forgot">Redefinir Senha</button>
+        </form>
     </main>
+    <script src="./src/user/forgot.js" type="module"></script>
     <script src="./src/user/loginUser.js" type="module"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
 
