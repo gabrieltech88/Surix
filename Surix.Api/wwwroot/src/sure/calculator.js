@@ -5,6 +5,11 @@ const value2 = document.getElementById('value2');
 const totalApostado = document.getElementById('total-apostado');
 const retornoGarantido = document.getElementById('retorno-garantido');
 const lucroText = document.getElementById('lucro');
+const confirmation = document.getElementById('container-confirmation-percent')
+const btnNao = document.getElementById('btnNao')
+const textPercent = document.getElementById('texPercent')
+const formCalc = document.getElementById('form-register-calc')
+const x = document.getElementById('x')
 
 const input1 = document.getElementById('input1');
 const input2 = document.getElementById('input2');
@@ -36,6 +41,8 @@ function checarECalcular() {
 
 // Função principal de cálculo
 function calcular(odd1, odd2, total) {
+    confirmation.style.display = 'flex'
+
     text1.textContent = `Casa A - Odd ${odd1}`;
     text2.textContent = `Casa B - Odd ${odd2}`;
 
@@ -61,9 +68,33 @@ function calcular(odd1, odd2, total) {
     retornoGarantido.textContent = `R$ ${retornoFinal.toFixed(2)}`;
     lucroText.textContent = `R$ ${lucro.toFixed(2)}`;
     totalApostado.textContent = `R$ ${total.toFixed(2)}`;
+
+    const stakeA = (1 / odd1) / (1 / odd1 + 1 / odd2) * total;
+    const stakeB = total - aposta1;
+
+    const retornoA = aposta1 * odd1;
+    const retornoB = aposta2 * odd2;
+
+    const lucroA = Math.min(retornoA, retornoB) - total;
+    const roi = (lucroA / total) * 100;
+
+    textPercent.textContent = `${roi.toFixed(2)}%`
 }
 
 // Adiciona os listeners nos 3 inputs
 [input1, input2, inputValor].forEach(input => {
     input.addEventListener('input', checarECalcular);
 });
+
+
+btnNao.addEventListener("click", () => {
+    confirmation.style.display = 'none'
+})
+
+btnSim.addEventListener("click", () => {
+    formCalc.style.display = 'flex'
+})
+
+x.addEventListener("click", () => {
+    formCalc.style.display = 'none'
+})

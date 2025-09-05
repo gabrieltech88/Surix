@@ -62,12 +62,17 @@
 
 .container-graph {
     display: flex;
-    margin-left: 5%;
     align-items: center;
     justify-content: center;
     height: 17rem;
-    width: 34rem;
+    width: 100%;
 }
+
+#meuGrafico {
+    width: 90% !important;
+    height: 90% !important;
+}
+
 
 .container-roi {
     justify-content: center;

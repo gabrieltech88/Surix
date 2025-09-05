@@ -12,11 +12,12 @@ const grafico = new Chart(ctx, {
         datasets: [{
             label: 'ROI (%)',
             data: [],
-            borderColor: '#00e900',
+            borderColor: '#20df66',
             tension: 0.6,
             fill: true,
+            backgroundColor: 'rgba(32, 223, 102, 0.2)', 
             pointRadius: 4,
-            pointBackgroundColor: 'white',
+            pointBackgroundColor: '#20df66',
             borderWidth: 2
         }]
     },
@@ -35,24 +36,26 @@ const grafico = new Chart(ctx, {
                 },
                 ticks: {
                     color: '#ededed',
-                    font: { size: 10, family: 'Arial' }
+                    font: { size: 12, family: 'Arial' }
                 }
             },
             y: {
                 beginAtZero: true,
                 grid: {
-                    color: '#3a3a3a',
+                    color: '#22252f',
                     drawBorder: false
                 },
                 ticks: {
                     color: '#ededed',
-                    font: { size: 10, family: 'Arial' }
+                    font: { size: 12, family: 'Arial' }
                 }
             }
         },
         plugins: {
             legend: {
                 labels: {
+                    usePointStyle: true,
+                    pointStyle: 'circle',
                     color: '#ededed',
                     font: { size: 12, weight: 'bold' }
                 }

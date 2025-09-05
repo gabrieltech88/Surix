@@ -44,7 +44,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     text.textContent = `${name} • ${count} registros`
 
-
     sures.forEach((sure) => {
         const tr = document.createElement("tr");
 
@@ -124,7 +123,7 @@ const loadPage = async (page) => {
 };
 
 function formatDate(dateString) {
-    const [datePart] = dateString.split(' '); // Pega apenas a parte da data (descarta hora)
+    const [datePart] = dateString.split('T'); // Pega apenas a parte da data (descarta hora)
     const [year, month, day] = datePart.split('-');
     return `${day}/${month}/${year}`;
 }

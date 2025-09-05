@@ -1,11 +1,8 @@
 import loadPage from "./contentSure.js";
-;
-;
-
 
 const btn = document.getElementById('btn-surix');
 let pageNumber = 1
-let pageSize = 4
+let pageSize = 5
 
 function getCookie(name) {
     const value = `; ${document.cookie}`;

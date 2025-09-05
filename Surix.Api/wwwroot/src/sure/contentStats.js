@@ -8,7 +8,7 @@ function animarNumero(element, valorFinal, duracao = 1000, prefixo = "", casasDe
             inicio = valorFinal;
             clearInterval(intervalo);
         }
-        element.textContent = prefixo + inicio.toFixed(casasDecimais);
+        element.textContent = prefixo + inicio.toFixed(casasDecimais) + sufixo;
     }, 16);
 }
 
