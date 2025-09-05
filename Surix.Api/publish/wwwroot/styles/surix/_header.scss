@@ -1,0 +1,97 @@
+@use '../abstract/variables';
+
+.header {
+    display: flex;
+    flex-direction: row;
+    background-color: variables.$card;
+    border-bottom: 0.0625rem solid variables.$border;
+
+    align-items: center;
+    padding: 1rem;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.container-infos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.875rem; // 14px
+}
+
+.header-left {
+    display: flex;
+    margin-left: 2rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem; // 4px
+}
+
+.container-img-logo {
+    display: flex;
+    align-items: center;
+    background: variables.$gradient-primary;
+    padding: 0.4rem;
+    border-radius: 0.625rem; // 10px
+}
+
+.img-logo {
+    width: 1.25rem; // 20px
+    height: 1.25rem;
+}
+
+.header-right {
+    display: flex;
+    gap: 2rem; // 32px
+}
+
+.title-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; // 8px
+    font-size: 1.5rem;
+    color: variables.$primary;
+    font-family: variables.$inter;
+    font-weight: bold;
+}
+
+.info {
+    color: variables.$text;
+    font-family: variables.$inter;
+    font-size: 0.8rem;
+    line-height: 0; // 0%
+}
+
+.btn-header {
+    border: none;
+    background-color: transparent;
+    margin-right: 2rem;
+}
+
+.btn-header-locals {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.375rem; // 6px
+    border: none;
+    background-color: transparent;
+    font-family: variables.$inter;
+    color: variables.$text;
+    font-size: 1rem;
+    text-decoration: none;
+
+    &:hover {
+        color: variables.$foreground;
+    }
+}
+
+.icon-btn {
+    height: 0.875rem; // 14px
+    width: 0.875rem;
+}
+
+.logo-surix {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem; // 10px
+}

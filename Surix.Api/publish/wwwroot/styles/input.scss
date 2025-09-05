@@ -1,0 +1,16 @@
+@use './abstract/reset';
+@use './abstract/screen';
+
+@use './cadastro/main';
+@use './cadastro/form';
+@use './index/login';
+@use './surix/header';
+@use './surix/surix';
+@use './surix/table';
+@use './surix/stats';
+@use './calculator/calculator';
+@use './sures/sures';
+@use './surix/mobile';
+@use './calculator/mobileCalculator';
+@use './index/loginMobile';
+@use './cadastro/cadastroMobile';
