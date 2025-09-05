@@ -26,7 +26,7 @@ form.addEventListener("submit", async (event) => {
     const novaSenhaConfirmada = event.target.confirmedPassword.value;
 
     if (novaSenha === novaSenhaConfirmada) {
-        const result = await fetch(`${window.env.PROD}/user/password`, {
+        const result = await fetch(`${window.env.DEV}/user/password`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",

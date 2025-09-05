@@ -377,7 +377,7 @@ body {
   border-radius: 8px;
 }
 .btn-submit-forgot:hover {
-  background-color: hsl(226, 16%, 16%);
+  background-color: #22252f;
 }
 
 .header {
@@ -535,11 +535,15 @@ body {
 
 .container-graph {
   display: flex;
-  margin-left: 5%;
   align-items: center;
   justify-content: center;
   height: 17rem;
-  width: 34rem;
+  width: 100%;
+}
+
+#meuGrafico {
+  width: 90% !important;
+  height: 90% !important;
 }
 
 .container-roi {
@@ -713,7 +717,7 @@ td {
 }
 
 tbody tr:hover {
-  background-color: hsl(226, 16%, 16%);
+  background-color: #22252f;
 }
 
 tbody tr:hover td {
@@ -1068,6 +1072,161 @@ hr {
   font-weight: 500;
 }
 
+#container-confirmation-percent {
+  display: none;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  background-color: rgba(34, 37, 47, 0.5);
+  border: 0.0625rem solid rgba(43, 47, 59, 0.5);
+  border-radius: 0.3rem;
+  padding: 1rem;
+  gap: 1.5rem;
+}
+
+.valor-lucro-percent {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #20df66;
+}
+
+.container-confirmation {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  text-align: center;
+}
+
+.container-confirmation .text-p {
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.container-btn-confirmation {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-confirmation:nth-child(1) {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  align-items: center;
+  width: 48%;
+  background-color: #20df66;
+  border-radius: 8px;
+  font-size: 1rem;
+  padding: 0.8em 0rem;
+  color: #ededed;
+  border: 1px solid #20df66;
+  color: hsl(225, 15%, 8%);
+}
+.btn-confirmation:nth-child(1):hover {
+  background-color: hsla(142, 71%, 45%, 0.9);
+  box-shadow: 0 10px 15px -3px hsla(142, 71%, 45%, 0.25), 0 4px 6px -2px hsla(142, 71%, 45%, 0.25);
+}
+
+.btn-confirmation:nth-child(2) {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  width: 48%;
+  background-color: hsl(225, 15%, 8%);
+  border-radius: 8px;
+  font-size: 1rem;
+  padding: 0.8em 0rem;
+  color: #ededed;
+  border: 1px solid hsla(0, 84.2%, 60.2%, 0.2);
+  align-items: center;
+}
+.btn-confirmation:nth-child(2):hover {
+  background-color: hsla(0, 84.2%, 60.2%, 0.1);
+  border-color: hsla(0, 84.2%, 60.2%, 0.3);
+}
+
+.verify {
+  font-size: 0.7rem;
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+.container-elements {
+  display: flex;
+  gap: 1rem;
+}
+
+.container-percent-lucro {
+  background-color: rgba(33, 196, 93, 0.2);
+  border: 1px solid rgba(33, 196, 93, 0.3);
+  border-radius: 8px;
+  padding: 0.4rem;
+}
+
+.container-title-calc {
+  display: flex;
+  justify-content: space-between;
+}
+
+#form-register-calc {
+  display: none;
+  position: fixed;
+  flex-direction: column;
+  top: 50%;
+  width: 30%;
+  z-index: 9999;
+  background-color: #191c24;
+  padding: 0.7rem 1rem 1rem 1rem;
+  gap: 1rem;
+  border: 1px solid rgba(33, 196, 93, 0.3);
+  border-radius: 8px;
+}
+#form-register-calc h3 {
+  color: #ededed;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+}
+#form-register-calc .container-betbooks {
+  display: flex;
+  justify-content: space-between;
+}
+#form-register-calc .container-betbooks .container-input-calc {
+  width: 48.5%;
+}
+
+.container-input-calc {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.container-input-calc input {
+  background-color: rgba(34, 37, 47, 0.5);
+  border: 0.0625rem solid rgba(43, 47, 59, 0.5);
+  border-radius: 0.3rem;
+  padding: 0.4rem;
+  color: #ededed;
+}
+.container-input-calc input:focus {
+  outline: none;
+}
+
+.container-x-calc {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#confirmar {
+  background: linear-gradient(135deg, hsl(142, 75%, 50%), hsl(103, 60%, 48%));
+  border-radius: 8px;
+  color: hsl(225, 15%, 8%);
+  font-size: 1rem;
+  border: 0.0625rem solid rgba(43, 47, 59, 0.5);
+  padding: 0.6rem;
+  font-weight: 600;
+}
+
 #body-sures {
   display: flex;
   flex-direction: column;
@@ -1381,10 +1540,6 @@ hr {
   .container {
     width: 100%;
   }
-  .container-graph {
-    height: 17rem;
-    width: 26rem;
-  }
   .container-odd {
     flex-direction: column;
     gap: 1rem;
@@ -1503,7 +1658,7 @@ hr {
   }
   .input-login {
     background-color: transparent;
-    border: 2px solid hsl(226, 16%, 16%);
+    border: 2px solid #22252f;
     width: 100%;
     color: #ededed;
   }

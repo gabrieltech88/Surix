@@ -8,12 +8,12 @@ function animarNumero(element, valorFinal, duracao = 1000, prefixo = "", casasDe
             inicio = valorFinal;
             clearInterval(intervalo);
         }
-        element.textContent = prefixo + inicio.toFixed(casasDecimais);
+        element.textContent = prefixo + inicio.toFixed(casasDecimais) + sufixo;
     }, 16);
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-    const response = await fetch(`${window.env.PROD}/sure/stats`);
+    const response = await fetch(`${window.env.DEV}/sure/stats`);
     const data = await response.json();
 
     animarNumero(document.getElementById("lucro"), data.lucroMensal, 1000, "R$ ", 2); // 2 casas decimais

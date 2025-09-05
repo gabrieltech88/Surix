@@ -14,7 +14,7 @@ form.addEventListener("submit", async (event) => {
     const userName = event.target.user.value;
     const password = event.target.password.value;
 
-    const response = await fetch(`${window.env.PROD}/user/create`, {
+    const response = await fetch(`${window.env.DEV}/user/create`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -43,7 +43,7 @@ form.addEventListener("submit", async (event) => {
             confirmButtonColor: '#00e900'
         }).then(() => {
             // Após o alerta ser fechado, redireciona
-            window.location.href = `${window.env.PROD}`;
+            window.location.href = `${window.env.DEV}`;
             btn.textContent = "Criar Conta";
         });
     } else {

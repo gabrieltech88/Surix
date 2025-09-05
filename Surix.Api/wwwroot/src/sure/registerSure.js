@@ -1,11 +1,8 @@
 import loadPage from "./contentSure.js";
-;
-;
-
 
 const btn = document.getElementById('btn-surix');
 let pageNumber = 1
-let pageSize = 4
+let pageSize = 5
 
 function getCookie(name) {
     const value = `; ${document.cookie}`;
@@ -52,7 +49,7 @@ btn.addEventListener("click", async () => {
         stake: stakeTotal
     }
 
-    const response = await fetch(`${window.env.PROD}/sure`, {
+    const response = await fetch(`${window.env.DEV}/sure`, {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',

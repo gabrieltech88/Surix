@@ -170,3 +170,168 @@ hr {
     font-weight: 500;
   }
 }
+
+
+#container-confirmation-percent {
+  display: none;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  background-color: rgba(34, 37, 47, 0.5);
+  border: 0.0625rem solid rgba(43, 47, 59, 0.5);
+  border-radius: 0.3rem;
+  padding: 1rem;
+  gap: 1.5rem;
+}
+
+.valor-lucro-percent {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  color: variables.$primary;
+}
+
+.container-confirmation {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  text-align: center;
+}
+
+.container-confirmation .text-p {
+  color: #94a3b8;
+  font-weight: 600;
+
+}
+
+.container-btn-confirmation {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-confirmation:nth-child(1) {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  align-items: center;
+  width: 48%;
+  background-color: variables.$primary;
+  border-radius: 8px;
+  font-size: 1rem;
+  padding: 0.8em 0rem;
+  color: variables.$anti-flash-white;
+  border: 1px solid variables.$primary;
+  color: variables.$background;
+
+  &:hover {
+    background-color: hsl(142 71% 45% / 0.9);
+    box-shadow: 0 10px 15px -3px hsl(142 71% 45% / 0.25), 0 4px 6px -2px hsl(142 71% 45% / 0.25);
+  }
+}
+
+.btn-confirmation:nth-child(2) {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  width: 48%;
+  background-color: variables.$background;
+  border-radius: 8px;
+  font-size: 1rem;
+  padding: 0.8em 0rem;
+  color: variables.$anti-flash-white;
+  border: 1px solid hsl(0 84.2% 60.2% / 0.2);
+  align-items: center;
+
+  &:hover {
+    background-color: hsl(0 84.2% 60.2% / 0.1);
+    border-color: hsl(0 84.2% 60.2% / 0.3);
+  }
+}
+
+.verify {
+  font-size: 0.7rem;
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+.container-elements {
+  display: flex;
+  gap: 1rem;
+}
+
+.container-percent-lucro {
+  background-color: rgb(33, 196, 93, 0.2);
+  border: 1px solid rgb(33, 196, 93, 0.3);
+  border-radius: 8px;
+  padding: 0.4rem;
+}
+
+.container-title-calc {
+  display: flex;
+  justify-content: space-between;
+}
+
+#form-register-calc {
+  display: none;
+  position: fixed;
+  flex-direction: column;
+  top: 50%;
+  width: 30%;
+  z-index: 9999;
+  background-color: variables.$card;
+  padding: 0.7rem 1rem 1rem 1rem;
+  gap: 1rem;
+  border: 1px solid rgb(33, 196, 93, 0.3);
+  border-radius: 8px;
+
+  h3 {
+    color: variables.$anti-flash-white;
+    font-weight: 600;
+    font-family: variables.$inter;
+  }
+
+  .container-betbooks {
+    display: flex;
+    justify-content: space-between;
+    
+    .container-input-calc {
+      width: 48.5%;
+    }
+  }
+}
+
+.container-input-calc {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  input {
+    background-color: rgba(34, 37, 47, 0.5);
+    border: 0.0625rem solid rgba(43, 47, 59, 0.5);
+    border-radius: 0.3rem;
+    padding: 0.4rem;
+    color: variables.$anti-flash-white;
+    
+    &:focus {
+      outline: none;
+
+    }
+  }
+}
+
+.container-x-calc {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#confirmar {
+  background: variables.$gradient-primary;
+  border-radius: 8px;
+  color: variables.$background;
+  font-size: 1rem;
+  border: 0.0625rem solid rgba(43, 47, 59, 0.5);
+  padding: 0.6rem;
+  font-weight: 600;
+}

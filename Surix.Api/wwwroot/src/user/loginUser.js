@@ -15,7 +15,7 @@ form.addEventListener("submit", async (event) => {
 
     btn.textContent = "Logando..."
 
-    const response = await fetch(`${window.env.PROD}/user/manipulation/login`, {
+    const response = await fetch(`${window.env.DEV}/user/manipulation/login`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -24,7 +24,7 @@ form.addEventListener("submit", async (event) => {
     })
 
     if (response.ok) {
-        const response2 = await fetch(`${window.env.PROD}/surix`)
+        const response2 = await fetch(`${window.env.DEV}/surix`)
 
         if (response2.ok) {
             btn.textContent = "Entrar"

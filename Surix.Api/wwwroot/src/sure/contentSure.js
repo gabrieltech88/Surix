@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.log(token)
     table.innerHTML = "";
 
-    const response = await fetch(`${window.env.PROD}/sure/content`, {
+    const response = await fetch(`${window.env.DEV}/sure/content`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -43,7 +43,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     text.textContent = `${name} • ${count} registros`
-
 
     sures.forEach((sure) => {
         const tr = document.createElement("tr");
@@ -91,7 +90,7 @@ const loadPage = async (page) => {
     table.innerHTML = "";
 
     // faz fetch com pageNumber e pageSize
-    const response = await fetch(`${window.env.PROD}/sure/content?pageNumber=${pageNumber}&pageSize=${pageSize}`, {
+    const response = await fetch(`${window.env.DEV}/sure/content?pageNumber=${pageNumber}&pageSize=${pageSize}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -124,7 +123,7 @@ const loadPage = async (page) => {
 };
 
 function formatDate(dateString) {
-    const [datePart] = dateString.split(' '); // Pega apenas a parte da data (descarta hora)
+    const [datePart] = dateString.split('T'); // Pega apenas a parte da data (descarta hora)
     const [year, month, day] = datePart.split('-');
     return `${day}/${month}/${year}`;
 }
